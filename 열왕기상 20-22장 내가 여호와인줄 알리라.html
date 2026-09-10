@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내가 여호와인 줄 알리라 — 열왕기상 20-22장</title>
+<meta name="description" content="열왕기상 20장의 두 전쟁부터 21-22장의 유업과 하늘의 보좌까지, 하나님을 아는 것과 하나님과 하나 되는 것의 차이를 따라가는 성경공부 시리즈입니다.">
+<meta property="og:title" content="내가 여호와인 줄 알리라 — 열왕기상 20-22장">
+<meta property="og:description" content="포위된 사마리아, 작은 무리를 통한 승리, 산과 골짜기의 하나님, 그리고 유업과 하늘의 보좌까지 이어지는 이야기입니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F2F5F9;
+    --panel: #FFFFFF;
+    --ink: #17223B;
+    --ink-soft: #3C4A63;
+    --gold: #AD7F26;
+    --gold-soft: #E7D6A8;
+    --steel: #3A5170;
+    --steel-soft: #DDE6EF;
+    --vine: #2E6A48;
+    --vine-soft: #D6E6DC;
+    --judgment: #8A3B3B;
+    --judgment-soft: #EEDADA;
+    --line: #DDE3EC;
+    --serif: 'Noto Serif KR', serif;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection{ background: var(--gold-soft); color: var(--ink); }
+  .wrap{ max-width: 720px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position: relative;
+    min-height: 76vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 90px;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 55% 40% at 50% 22%, rgba(58,81,112,0.12), transparent 60%),
+      linear-gradient(180deg, #F6F7F5 0%, #F1F4F9 55%, var(--bg) 100%);
+  }
+  #hero-canvas{ position:absolute; inset:0; width:100%; height:100%; opacity:0.6; pointer-events:none; }
+  .hero-eyebrow{ position:relative; font-family: var(--serif); font-size:0.95rem; color: var(--steel); margin-bottom:22px; }
+  .hero h1{
+    position:relative; font-family: var(--serif); font-weight:700;
+    font-size: clamp(2.0rem, 5.2vw, 3.2rem); line-height:1.4;
+    color: var(--ink); max-width: 13ch; margin: 0 auto 26px;
+  }
+  .hero p.lede{ position:relative; font-size:1.02rem; color: var(--ink-soft); max-width:48ch; margin: 0 auto 44px; }
+  .hero-verse{
+    position:relative; max-width:520px; margin:0 auto; padding:28px 30px;
+    background: rgba(255,255,255,0.72); border:1px solid var(--line); border-radius:3px; backdrop-filter: blur(6px);
+  }
+  .hero-verse p{ font-family: var(--serif); font-size:1.03rem; color: var(--ink); line-height:1.85; }
+  .hero-verse cite{ display:block; font-style:normal; font-family: var(--sans); font-size:0.85rem; color: var(--steel); margin-top:12px; }
+
+  .rail{ position:fixed; left:0; top:0; width:3px; height:100%; z-index:40; }
+  .rail-fill{ width:100%; height:0%; background: linear-gradient(180deg, var(--steel), var(--gold), var(--vine), var(--judgment)); transition: height 0.08s linear; }
+
+  .scene{ padding: 86px 0 8px; transition: opacity 0.9s ease, transform 0.9s ease; }
+  .scene.pre-reveal{ opacity:0; transform: translateY(22px); }
+  .scene.visible{ opacity:1; transform: translateY(0); }
+  .scene-label{ font-family: var(--serif); font-size:0.92rem; margin-bottom:14px; }
+  .scene-label span{ padding-bottom:2px; border-bottom:1px solid currentColor; }
+  .scene h2{ font-family: var(--serif); font-weight:600; font-size: clamp(1.5rem, 3.4vw, 1.9rem); line-height:1.5; margin-bottom:30px; color: var(--ink); }
+  .scene .body-text{ font-size:1rem; color: var(--ink-soft); max-width:62ch; }
+  .scene .body-text p{ margin-bottom:22px; }
+
+  .scene.steel .scene-label{ color: var(--steel); }
+  .scene.gold .scene-label{ color: var(--gold); }
+
+  .verse-block{ margin:28px 0 30px; padding:22px 26px; background: var(--panel); border-left:3px solid var(--line); border-radius:0 4px 4px 0; }
+  .scene.steel .verse-block{ border-left-color: var(--steel); background: var(--steel-soft); }
+  .scene.gold .verse-block{ border-left-color: var(--gold); background:#FBF6E9; }
+  .verse-block p{ font-family: var(--serif); font-size:1.04rem; color: var(--ink); line-height:1.85; margin-bottom:0 !important; }
+  .verse-block cite{ display:block; font-style:normal; font-family: var(--sans); font-size:0.82rem; color: var(--ink-soft); margin-top:10px; }
+
+  /* ---------- MOUNTAIN/VALLEY CENTERPIECE ---------- */
+  .horizon{
+    position:relative; margin: 30px 0 60px; padding: 0;
+    height: 340px; overflow:hidden; border-radius:6px;
+    background: linear-gradient(180deg, #FDF8EC 0%, #F3F1E4 55%, #EDF1F6 100%);
+  }
+  #horizon-canvas{ position:absolute; inset:0; width:100%; height:100%; }
+  .horizon-caption{
+    position:absolute; left:0; right:0; bottom:26px; text-align:center; padding:0 24px;
+  }
+  .horizon-caption .glyph{ font-family: var(--serif); font-size:0.85rem; color: var(--steel); margin-bottom:10px; }
+  .horizon-caption p{ font-family: var(--serif); font-size:1.05rem; color: var(--ink); line-height:1.75; max-width: 420px; margin: 0 auto; }
+
+  .divider{ display:flex; align-items:center; justify-content:center; gap:14px; margin: 8px 0 0; color: var(--line); }
+  .divider .line{ width:60px; height:1px; background: currentColor; }
+  .divider .mark{ font-family: var(--serif); font-size:0.8rem; color: var(--ink-soft); }
+
+  /* ---------- RECAP TIMELINE ---------- */
+  .recap{ padding: 86px 0 8px; transition: opacity 0.9s ease, transform 0.9s ease; }
+  .recap.pre-reveal{ opacity:0; transform: translateY(22px); }
+  .recap.visible{ opacity:1; transform: translateY(0); }
+  .recap .scene-label{ font-family: var(--serif); font-size:0.92rem; margin-bottom:14px; color: var(--ink-soft); }
+  .recap .scene-label span{ padding-bottom:2px; border-bottom:1px solid currentColor; }
+  .recap h2{ font-family: var(--serif); font-weight:600; font-size: clamp(1.5rem, 3.4vw, 1.9rem); line-height:1.5; margin-bottom:16px; color: var(--ink); }
+  .recap > p.intro{ color: var(--ink-soft); max-width:62ch; margin-bottom: 40px; }
+
+  .timeline{ position:relative; padding-left: 26px; border-left: 1px solid var(--line); }
+  .t-item{ position:relative; padding-bottom: 40px; }
+  .t-item:last-child{ padding-bottom: 0; }
+  .t-item::before{
+    content:''; position:absolute; left:-30px; top:4px; width:9px; height:9px; border-radius:50%;
+    background: var(--dot, var(--ink-soft));
+  }
+  .t-item.vine{ --dot: var(--vine); }
+  .t-item.judgment{ --dot: var(--judgment); }
+  .t-item.gold{ --dot: var(--gold); }
+  .t-item .t-label{ font-family: var(--serif); font-size:0.88rem; color: var(--dot, var(--ink-soft)); margin-bottom:10px; }
+  .t-item .t-verse{ font-family: var(--serif); font-size:1rem; color: var(--ink); line-height:1.8; margin-bottom:8px; }
+  .t-item .t-verse cite{ display:inline; font-style:normal; font-family: var(--sans); font-size:0.8rem; color: var(--ink-soft); margin-left:8px; }
+  .t-item .t-gloss{ font-size:0.94rem; color: var(--ink-soft); max-width: 58ch; }
+
+  /* ---------- CLOSING ---------- */
+  .closing{
+    margin: 100px 0 0; padding: 60px 40px 64px;
+    background: linear-gradient(160deg, #F4F7FB 0%, #EAEFF6 100%);
+    border: 1px solid var(--steel-soft); border-radius:6px;
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .closing.pre-reveal{ opacity:0; transform: translateY(22px); }
+  .closing.visible{ opacity:1; transform: translateY(0); }
+  .closing h2{ font-family: var(--serif); font-weight:700; font-size: clamp(1.4rem, 3vw, 1.7rem); color: var(--ink); margin-bottom:26px; line-height:1.5; }
+  .closing .body-text{ color: var(--ink-soft); }
+  .closing .body-text p{ margin-bottom:22px; }
+  .closing .signature{ margin-top:30px; font-family: var(--serif); font-size:1.06rem; color: var(--steel); line-height:1.8; }
+
+  footer{ padding:60px 0 80px; text-align:center; }
+  footer p{ font-family: var(--serif); font-size:0.9rem; color: var(--ink-soft); }
+
+  @media (max-width: 480px){
+    .hero{ padding:100px 20px 70px; min-height:70vh; }
+    .scene, .recap{ padding:64px 0 8px; }
+    .verse-block{ padding:18px 20px; }
+    .closing{ padding:44px 24px 50px; }
+    .horizon{ height:280px; }
+    .timeline{ padding-left:20px; }
+    .t-item::before{ left:-24px; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .scene, .recap, .closing{ transition:none !important; opacity:1 !important; transform:none !important; }
+    #hero-canvas, #horizon-canvas{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="rail"><div class="rail-fill" id="railFill"></div></div>
+
+<section class="hero">
+  <canvas id="hero-canvas"></canvas>
+  <p class="hero-eyebrow">열왕기상 시리즈 · 아홉 번째 이야기</p>
+  <h1>내가 여호와인 줄<br>알리라</h1>
+  <p class="lede">열왕기상 20장의 두 전쟁부터 21-22장의 유업과 하늘의 보좌까지, 하나님을 아는 것과 하나님과 하나 되는 것의 차이를 따라갑니다.</p>
+  <div class="hero-verse">
+    <p>“시리아 왕 벤하닷이 그의 군대를 다 모으니, 서른두 왕이 그와 함께 있었고 말들과 병거들도 있었다. 그는 올라가 사마리아를 포위하고 공격하였다.”</p>
+    <cite>열왕기상 20:1</cite>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- SCENE 1 -->
+  <section class="scene steel" id="s1">
+    <p class="scene-label"><span>장면 하나 — 포위된 사마리아</span></p>
+    <h2>서른두 왕 앞에서 열리는 무대</h2>
+    <div class="body-text">
+      <p>이 장면은 단순한 전쟁의 시작이 아니라, 하나님께서 자신의 백성 가운데서 무엇을 드러내시려는지 보여 주는 무대의 열림과도 같습니다. 겉으로 보기에는 압도적인 세력—서른두 왕과 병거와 말들—이 하나님의 백성을 둘러싸고 있습니다. 그러나 이 상황은 이스라엘의 강함이나 약함을 드러내기 위한 것이 아니라, 오직 “내가 여호와라는 것을 네가 알게 될 것이다”라는 하나님의 선언을 이루기 위한 자리입니다.</p>
+    </div>
+    <div class="verse-block">
+      <p>“나와 내가 가진 모든 것은 왕의 것입니다.”</p>
+      <cite>열왕기상 20:4</cite>
+    </div>
+    <div class="body-text">
+      <p>아합은 이미 마음이 기울어진 왕이었습니다. 그는 벤하닷의 요구 앞에서 이렇게 말하며 자신을 내어줍니다. 여기서 우리는 사람의 내면이 하나님께 속하지 않을 때 얼마나 쉽게 세상과 타협하는지를 보게 됩니다. 그러나 하나님은 이러한 아합조차도 포기하지 않으시고, 그를 통해 자신의 이름을 알게 하시려 합니다.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span class="line"></span><span class="mark">✦</span><span class="line"></span></div>
+
+  <!-- SCENE 2 -->
+  <section class="scene gold" id="s2">
+    <p class="scene-label"><span>장면 둘 — 작은 무리, 드러난 능력</span></p>
+    <h2>승리는 군사력이 아니라 계시입니다</h2>
+    <div class="verse-block">
+      <p>“네가 이 큰 무리를 보았느냐? 이제 내가 이들을 오늘 네 손에 넘겨주리니, 내가 여호와라는 것을 네가 알게 될 것이다.”</p>
+      <cite>열왕기상 20:13</cite>
+    </div>
+    <div class="body-text">
+      <p>이 말씀은 전쟁의 이유를 분명히 밝힙니다. 승리는 이스라엘의 군사력 때문이 아니라, 하나님 자신을 계시하기 위함입니다. 더 놀라운 것은 그 방법입니다. 하나님은 “각 지방 장관들을 시중드는 청년들”이라는 작고 보잘것없는 무리를 통해 승리를 이루십니다. 이는 하나님의 일하심이 항상 사람의 계산과 다르며, 그분의 능력이 사람의 약함 가운데서 드러난다는 원칙을 보여 줍니다.</p>
+    </div>
+    <div class="verse-block">
+      <p>“저마다 적군을 쳐 죽이자 시리아 사람들이 도망하였고.”</p>
+      <cite>열왕기상 20:20</cite>
+    </div>
+    <div class="body-text">
+      <p>전쟁은 인간적인 상식을 깨뜨리는 방식으로 진행됩니다. 시리아 군대는 술에 취해 있고, 이스라엘은 작은 무리처럼 보입니다. 그러나 결과는 명확합니다. 하나님께서 친히 개입하셨기 때문입니다.</p>
+    </div>
+  </section>
+
+  <!-- HORIZON CENTERPIECE -->
+  <div class="horizon" id="horizon">
+    <canvas id="horizon-canvas"></canvas>
+    <div class="horizon-caption">
+      <p class="glyph">산에도, 골짜기에도</p>
+      <p>“내가 이 큰 무리를 네 손에 넘겨주겠다. 그러면 내가 여호와라는 것을 너희가 알게 될 것이다.”<br>— 열왕기상 20:28</p>
+    </div>
+  </div>
+
+  <!-- SCENE 3 -->
+  <section class="scene steel" id="s3">
+    <p class="scene-label"><span>장면 셋 — 산에도 골짜기에도</span></p>
+    <h2>사람이 하나님을 제한할 수 없습니다</h2>
+    <div class="body-text">
+      <p>그러나 이야기는 여기서 끝나지 않습니다. 하나님은 한 번 더 말씀하십니다. 사람은 하나님을 제한하려 합니다. 어떤 상황에서는 하나님이 역사하시고, 어떤 상황에서는 그렇지 않다고 생각합니다. 그러나 하나님은 산뿐 아니라 골짜기에서도 동일하신 분입니다. 그래서 두 번째 전투에서도 동일한 결론이 나타납니다. 하루 만에 십만 명이 쓰러지고, 성벽이 무너집니다. 하나님은 자신을 제한하려는 인간의 생각을 깨뜨리며, 자신이 어떤 분이신지를 드러내십니다.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span class="line"></span><span class="mark">✦</span><span class="line"></span></div>
+
+  <!-- SCENE 4 -->
+  <section class="scene steel" id="s4">
+    <p class="scene-label"><span>장면 넷 — 사람의 판단, 하나님의 뜻</span></p>
+    <h2>아는 것과 순종하는 것은 다른 문제입니다</h2>
+    <div class="body-text">
+      <p>그런데 바로 그 순간, 이야기는 예상치 못한 방향으로 흘러갑니다.</p>
+    </div>
+    <div class="verse-block">
+      <p>“그는 나의 형제요.”</p>
+      <cite>열왕기상 20:32</cite>
+    </div>
+    <div class="body-text">
+      <p>아합은 패배한 벤하닷을 죽이지 않고 이렇게 말하며 살려 줍니다. 인간적인 관대함처럼 보이지만, 이것은 하나님의 뜻을 어긴 것입니다. 하나님께서 멸하기로 정하신 것을 사람의 판단으로 바꾸어 버린 것입니다.</p>
+      <p>결국 하나님은 신언자를 통해 말씀하십니다.</p>
+    </div>
+    <div class="verse-block">
+      <p>“내가 멸망시키기로 작정한 사람을 네가 네 손에서 놓아주었으니, 네 목숨으로 그의 목숨을 대신해야 한다.”</p>
+      <cite>열왕기상 20:42</cite>
+    </div>
+    <div class="body-text">
+      <p>여기서 드러나는 하나님의 경륜은 분명합니다. 하나님은 자신의 뜻을 이루기 위해 사람을 사용하시지만, 그 뜻 자체는 결코 사람의 감정이나 판단으로 바뀌지 않습니다. 하나님을 아는 것과 하나님의 뜻에 순종하는 것은 다른 문제이며, 아합은 전자를 경험했으나 후자에는 실패했습니다.</p>
+    </div>
+  </section>
+
+  <!-- RECAP TIMELINE -->
+  <section class="recap" id="recap">
+    <p class="scene-label"><span>이어지는 흐름 — 유업에서 화살까지</span></p>
+    <h2>세 장의 이야기가 하나로 이어집니다</h2>
+    <p class="intro">이 흐름은 곧바로 나봇의 포도원 사건으로, 그리고 미가야가 본 하늘의 보좌로 이어집니다.</p>
+
+    <div class="timeline">
+      <div class="t-item vine">
+        <p class="t-label">빼앗긴 유업</p>
+        <p class="t-verse">“제 조상의 유업을 왕께 넘겨드리는 것을 여호와께서 막으셨습니다.”<cite>열왕기상 21:3</cite></p>
+        <p class="t-gloss">나봇은 하나님의 말씀을 따라 자신의 유업을 지키려 합니다. ‘유업’은 단순한 땅이 아니라 하나님과의 관계 안에서 주어진 기업, 사람의 거래 대상이 될 수 없는 것이었습니다. 그러나 아합은 그것을 탐하고, 이세벨은 거짓과 폭력을 통해 그것을 빼앗습니다.</p>
+      </div>
+      <div class="t-item judgment">
+        <p class="t-label">선언된 공의</p>
+        <p class="t-verse">“네가 살인을 하고 또 빼앗기까지 하느냐?”<cite>열왕기상 21:19</cite></p>
+        <p class="t-gloss">하나님은 단순히 사건을 보시는 분이 아니라 그 중심의 본질을 드러내십니다. 살인과 빼앗음은 타락한 인간 통치의 핵심이며, 하나님은 “개들이 나봇의 피를 핥은 그곳에서 너의 피도 핥을 것이다”라고 공의를 선언하십니다.</p>
+      </div>
+      <div class="t-item gold">
+        <p class="t-label">낮아짐과 유예</p>
+        <p class="t-verse">“아합이 내 앞에서 자신을 낮춘 것을 보았느냐?”<cite>열왕기상 21:29</cite></p>
+        <p class="t-gloss">완전한 회개는 아니지만, 하나님은 심판 가운데서도 사람의 반응을 보시고 낮아짐에 유예를 주십니다. 공의와 긍휼이 동시에 역사하고 있음을 보여 줍니다.</p>
+      </div>
+      <div class="t-item gold">
+        <p class="t-label">한 사람의 진실</p>
+        <p class="t-verse">“나는 여호와께서 나에게 말씀하시는 것만 말할 것입니다.”<cite>열왕기상 22:14</cite></p>
+        <p class="t-gloss">라못길르앗 전투를 앞두고 수많은 신언자들이 “올라가십시오”라고 말할 때, 미가야만이 진실을 말합니다. 다수의 목소리가 진리를 보장하지 않습니다.</p>
+      </div>
+      <div class="t-item steel">
+        <p class="t-label">목자 없는 양</p>
+        <p class="t-verse">“저는 온 이스라엘이 목자 없는 양처럼 산지에 흩어져 있는 것을 보았습니다.”<cite>열왕기상 22:17</cite></p>
+        <p class="t-gloss">이것은 단순한 예언이 아니라 하나님의 시선에서 본 이스라엘의 상태입니다. 왕은 있지만 목자가 없고, 조직은 있지만 생명이 없습니다.</p>
+      </div>
+      <div class="t-item judgment">
+        <p class="t-label">성취된 말씀</p>
+        <p class="t-verse">“개들이 아합의 피를 핥았다. 여호와께서 하신 말씀대로였다.”<cite>열왕기상 22:38</cite></p>
+        <p class="t-gloss">사람이 보기에는 우연처럼 보이는 한 화살이었지만, 그것은 하나님의 말씀의 성취였습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing" id="closing">
+    <h2>아는 것을 넘어, 하나 됨으로</h2>
+    <div class="body-text">
+      <p>이렇게 세 장의 이야기는 하나의 흐름으로 이어집니다. 하나님은 전쟁 속에서 자신을 계시하시고, 인간의 불순종 속에서도 자신의 뜻을 이루시며, 결국 말씀하신 바를 반드시 성취하십니다.</p>
+      <p>그러나 이 모든 이야기의 중심에는 더 깊은 하나님의 의도가 흐르고 있습니다.</p>
+      <p>하나님은 단순히 악을 심판하시거나 선을 장려하시는 분이 아니라, 자신을 사람에게 알리시고, 사람이 그분을 알고 그분의 뜻 안에 머물도록 이끄시는 분입니다. “내가 여호와라는 것을 알게 될 것이다”라는 반복되는 선언은, 하나님께서 사람을 단순한 순종의 대상으로 두시는 것이 아니라, 그분 자신을 알도록 부르신다는 것을 보여 줍니다.</p>
+      <p>하지만 동시에, 하나님을 아는 지식만으로는 충분하지 않습니다. 아합은 하나님을 경험했지만, 그의 내면은 하나님께 속하지 않았습니다. 결국 그는 자신의 욕망과 판단을 따라 살다가 말씀의 심판 아래 들어갑니다.</p>
+      <p>이 지점에서 성경의 더 큰 흐름이 조용히 드러납니다. 사람이 하나님을 알고도 하나님과 하나 되지 못할 때, 그 지식은 생명이 되지 못합니다. 하나님은 단지 외적인 승리나 역사적 사건을 원하시는 것이 아니라, 사람의 존재 안에 그분 자신이 들어와 하나 되기를 원하십니다.</p>
+      <p>그래서 이 모든 이야기는 하나의 방향으로 수렴됩니다. 하나님은 사람을 통해 자신을 드러내시는 데서 멈추지 않고, 결국 사람 안에 들어오셔서 사람과 연합된 존재, 곧 하나님-사람의 생활을 이루시려 합니다.</p>
+      <p>전쟁, 심판, 예언, 실패, 낮아짐—이 모든 과정은 결국 한 가지를 향합니다. 하나님이 사람 안에 실제가 되시고, 사람은 하나님을 단지 아는 것을 넘어 그분과 하나 되어 그분의 뜻을 살아내는 것.</p>
+    </div>
+    <p class="signature">이것이 하나님께서 역사 속에서, 그리고 이 이야기 속에서<br>이루고자 하시는 궁극적인 경륜입니다.</p>
+  </section>
+
+</div>
+
+<footer>
+  <p>열왕기상 성경공부 시리즈 · 아홉 번째 이야기 · 20-22장</p>
+</footer>
+
+<script>
+  // Scroll reveal for scenes/recap/closing (progressive enhancement only —
+  // content is visible by default in CSS even if this script fails to run)
+  if('IntersectionObserver' in window){
+    const revealables = document.querySelectorAll('.scene, .recap, .closing');
+    revealables.forEach(el => el.classList.add('pre-reveal'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          e.target.classList.remove('pre-reveal');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealables.forEach(s => io.observe(s));
+  }
+
+  // Scroll progress rail
+  const railFill = document.getElementById('railFill');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    railFill.style.height = scrolled + '%';
+  });
+
+  // Hero canvas: soft rising steel-gold motes
+  (function(){
+    const canvas = document.getElementById('hero-canvas');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let w, h, motes = [];
+    function resize(){ w = canvas.width = canvas.offsetWidth; h = canvas.height = canvas.offsetHeight; }
+    function init(){
+      resize();
+      motes = Array.from({length: 36}, () => ({
+        x: Math.random()*w, y: Math.random()*h,
+        r: Math.random()*1.6 + 0.4, vy: Math.random()*0.22 + 0.05,
+        alpha: Math.random()*0.35 + 0.12,
+        gold: Math.random() > 0.5
+      }));
+    }
+    function draw(){
+      ctx.clearRect(0,0,w,h);
+      motes.forEach(m => {
+        ctx.beginPath();
+        ctx.arc(m.x, m.y, m.r, 0, Math.PI*2);
+        ctx.fillStyle = m.gold ? `rgba(173,127,38,${m.alpha})` : `rgba(58,81,112,${m.alpha})`;
+        ctx.fill();
+        m.y -= m.vy;
+        if(m.y < -10){ m.y = h + 10; m.x = Math.random()*w; }
+      });
+      requestAnimationFrame(draw);
+    }
+    init();
+    window.addEventListener('resize', resize);
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){ draw(); }
+  })();
+
+  // Horizon canvas: mountain + valley silhouette with radiant sun
+  (function(){
+    const canvas = document.getElementById('horizon-canvas');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let w, h, t = 0;
+    function resize(){ w = canvas.width = canvas.offsetWidth; h = canvas.height = canvas.offsetHeight; }
+    function draw(){
+      ctx.clearRect(0,0,w,h);
+      const baseline = h * 0.62;
+      const sunX = w * 0.5, sunY = baseline - h*0.16;
+
+      // sun rays
+      for(let i = 0; i < 14; i++){
+        const angle = (Math.PI*2/14)*i + t/1400;
+        const len = 70 + Math.sin(t/70 + i)*8;
+        ctx.beginPath();
+        ctx.moveTo(sunX + Math.cos(angle)*26, sunY + Math.sin(angle)*26);
+        ctx.lineTo(sunX + Math.cos(angle)*len, sunY + Math.sin(angle)*len);
+        ctx.strokeStyle = 'rgba(173,127,38,0.14)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+      // sun core glow
+      const grad = ctx.createRadialGradient(sunX, sunY, 2, sunX, sunY, 30);
+      grad.addColorStop(0, 'rgba(255,238,196,0.95)');
+      grad.addColorStop(1, 'rgba(173,127,38,0.05)');
+      ctx.beginPath();
+      ctx.arc(sunX, sunY, 26 + Math.sin(t/50)*2, 0, Math.PI*2);
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      // mountain range (left, taller)
+      ctx.beginPath();
+      ctx.moveTo(0, baseline);
+      ctx.lineTo(w*0.08, baseline - h*0.30);
+      ctx.lineTo(w*0.20, baseline - h*0.12);
+      ctx.lineTo(w*0.32, baseline - h*0.38);
+      ctx.lineTo(w*0.44, baseline - h*0.05);
+      ctx.lineTo(w*0.50, baseline);
+      ctx.closePath();
+      ctx.fillStyle = '#3A5170';
+      ctx.globalAlpha = 0.16;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+
+      // valley (center dip)
+      ctx.beginPath();
+      ctx.moveTo(w*0.44, baseline - h*0.03);
+      ctx.quadraticCurveTo(w*0.5, baseline + h*0.04, w*0.56, baseline - h*0.03);
+      ctx.lineTo(w*0.56, baseline);
+      ctx.lineTo(w*0.44, baseline);
+      ctx.closePath();
+      ctx.fillStyle = '#3A5170';
+      ctx.globalAlpha = 0.08;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+
+      // mountain range (right)
+      ctx.beginPath();
+      ctx.moveTo(w*0.56, baseline);
+      ctx.lineTo(w*0.64, baseline - h*0.18);
+      ctx.lineTo(w*0.74, baseline - h*0.02);
+      ctx.lineTo(w*0.84, baseline - h*0.34);
+      ctx.lineTo(w*0.94, baseline - h*0.10);
+      ctx.lineTo(w, baseline - h*0.02);
+      ctx.lineTo(w, baseline);
+      ctx.closePath();
+      ctx.fillStyle = '#3A5170';
+      ctx.globalAlpha = 0.16;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+
+      // ground band
+      ctx.fillStyle = '#3A5170';
+      ctx.globalAlpha = 0.06;
+      ctx.fillRect(0, baseline, w, h - baseline);
+      ctx.globalAlpha = 1;
+
+      t++;
+      requestAnimationFrame(draw);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){ draw(); }
+    else { draw(); }
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나뉜 마음, 꺼지지 않는 등불 — 열왕기상 11장</title>
+<meta name="description" content="열왕기상 11장 성경공부: 솔로몬의 마음이 나뉘어 왕국이 찢어지지만, 다윗에게 주신 약속의 등불은 예루살렘에서 꺼지지 않는다.">
+<meta property="og:title" content="나뉜 마음, 꺼지지 않는 등불 — 열왕기상 11장">
+<meta property="og:description" content="솔로몬의 마음이 나뉘어 왕국이 찢어지지만, 다윗에게 주신 약속의 등불은 예루살렘에서 꺼지지 않는다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EEF2F7;
+    --bg-panel:#E3E9F1;
+    --ink:#171B24;
+    --ink-soft:#4B5568;
+    --indigo:#26314F;
+    --indigo-deep:#1C2540;
+    --indigo-text:#EDEFF5;
+    --indigo-text-soft:#B7C0D6;
+    --gold:#E2A23A;
+    --gold-bright:#F6C863;
+    --line:rgba(23,27,36,0.14);
+    --line-on-indigo:rgba(237,239,245,0.16);
+    --maxw:700px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Noto Serif KR', serif;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.label,.nav-brand{
+    font-family:'Noto Sans KR', sans-serif;
+  }
+  ::selection{ background:var(--gold); color:var(--indigo-deep); }
+
+  a{ color:inherit; }
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 28px;
+    background:rgba(238,242,247,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-brand{ font-size:14px; font-weight:600; letter-spacing:0.02em; color:var(--ink); }
+  .nav-brand span{ color:var(--gold); }
+  .nav-meta{ font-size:12px; color:var(--ink-soft); font-family:'Noto Sans KR',sans-serif; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    min-height:88vh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding:120px 24px 80px;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 12%, rgba(226,162,58,0.16), transparent 60%),
+      linear-gradient(180deg, #E9EEF5 0%, #EEF2F7 55%, #EEF2F7 100%);
+  }
+  #ember-canvas{
+    position:absolute; inset:0; width:100%; height:100%;
+    opacity:0.55;
+    pointer-events:none;
+  }
+  .hero-eyebrow{
+    position:relative; z-index:2;
+    font-size:13px; font-weight:500; letter-spacing:0.04em;
+    color:var(--ink-soft);
+    margin-bottom:22px;
+  }
+  .hero h1{
+    position:relative; z-index:2;
+    font-size:clamp(34px, 6vw, 58px);
+    line-height:1.28;
+    font-weight:700;
+    margin:0 0 26px;
+    color:var(--ink);
+    max-width:16ch;
+  }
+  .hero h1 em{
+    font-style:normal;
+    background:linear-gradient(90deg, var(--gold) 0%, var(--gold-bright) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero p{
+    position:relative; z-index:2;
+    font-family:'Noto Serif KR', serif;
+    font-size:17px; color:var(--ink-soft);
+    max-width:44ch; margin:0 auto;
+  }
+  .hero-scroll{
+    position:relative; z-index:2;
+    margin-top:56px;
+    width:1px; height:56px;
+    background:linear-gradient(180deg, var(--gold), transparent);
+  }
+
+  /* ---------- spine + sections ---------- */
+  .journey{
+    position:relative;
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:10px 24px 40px;
+  }
+  .spine{
+    position:absolute;
+    left:6px; top:0; bottom:0;
+    width:2px;
+    background:linear-gradient(
+      180deg,
+      var(--gold) 0%, var(--gold) 6%,
+      #8C93A6 10%, #8C93A6 44%,
+      var(--indigo) 48%, var(--indigo) 58%,
+      var(--gold) 68%, var(--gold-bright) 78%,
+      var(--gold-bright) 100%
+    );
+    opacity:0.55;
+  }
+  @media (max-width:640px){ .spine{ display:none; } }
+
+  section.chapter{
+    position:relative;
+    padding:64px 0 64px 34px;
+    border-bottom:1px solid var(--line);
+    opacity:0; transform:translateY(14px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  @media (max-width:640px){ section.chapter{ padding-left:0; } }
+  section.chapter.in-view{ opacity:1; transform:translateY(0); }
+  section.chapter:last-of-type{ border-bottom:none; }
+
+  .node{
+    position:absolute; left:-1px; top:70px;
+    width:12px; height:12px; border-radius:50%;
+    background:var(--dot, var(--gold));
+    box-shadow:0 0 0 4px var(--bg), 0 0 16px 2px var(--dot, var(--gold));
+  }
+  @media (max-width:640px){ .node{ display:none; } }
+
+  .chap-label{
+    font-size:12.5px; font-weight:600; letter-spacing:0.02em;
+    color:var(--gold); margin-bottom:10px;
+  }
+  section.chapter h2{
+    font-size:clamp(21px,3vw,27px);
+    font-weight:700; line-height:1.45;
+    margin:0 0 22px;
+    color:var(--ink);
+  }
+  section.chapter p{
+    font-size:16.5px; color:var(--ink); margin:0 0 18px;
+  }
+  section.chapter p.soft{ color:var(--ink-soft); }
+
+  blockquote{
+    margin:26px 0; padding:4px 0 4px 20px;
+    border-left:2px solid var(--gold);
+    font-size:17px; color:var(--ink);
+  }
+  blockquote p{ margin:0 0 6px; }
+  blockquote cite{
+    display:block; font-style:normal;
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:13px; color:var(--ink-soft);
+  }
+
+  /* indigo (decline / judgment) variant */
+  section.chapter.dim{
+    background:var(--indigo);
+    color:var(--indigo-text);
+    margin:0 -24px; padding:64px 24px 64px 58px;
+    border-bottom:1px solid var(--line-on-indigo);
+  }
+  @media (max-width:640px){ section.chapter.dim{ padding-left:24px; } }
+  section.chapter.dim h2{ color:var(--indigo-text); }
+  section.chapter.dim p{ color:var(--indigo-text-soft); }
+  section.chapter.dim blockquote{ border-left-color:var(--gold-bright); color:var(--indigo-text); }
+  section.chapter.dim blockquote cite{ color:var(--indigo-text-soft); }
+  section.chapter.dim .chap-label{ color:var(--gold-bright); }
+  section.chapter.dim .node{ box-shadow:0 0 0 4px var(--indigo), 0 0 16px 2px var(--dot, var(--gold-bright)); }
+
+  /* split bar (10 tribes vs 1 tribe) */
+  .split-bar{
+    display:flex; width:100%; height:44px; border-radius:3px; overflow:hidden;
+    margin:28px 0 10px; font-family:'Noto Sans KR',sans-serif;
+  }
+  .split-bar .ten{
+    flex:10; background:#3A4568;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--indigo-text-soft); font-size:13px;
+  }
+  .split-bar .one{
+    flex:1; min-width:52px; background:linear-gradient(90deg, var(--gold), var(--gold-bright));
+    display:flex; align-items:center; justify-content:center;
+    color:var(--indigo-deep); font-size:13px; font-weight:600;
+  }
+  .split-cap{
+    font-family:'Noto Sans KR',sans-serif; font-size:12.5px;
+    color:var(--indigo-text-soft); margin:0 0 24px;
+  }
+
+  /* closing */
+  .closing{
+    max-width:var(--maxw); margin:0 auto;
+    padding:90px 24px 130px;
+    text-align:left;
+  }
+  .closing .chap-label{ text-align:left; }
+  .closing p{
+    font-size:18px; line-height:2; color:var(--ink); margin:0 0 22px;
+  }
+  .closing .final{
+    margin-top:36px; padding-top:36px; border-top:1px solid var(--line);
+    font-size:19px; font-weight:500; color:var(--ink);
+  }
+  .closing .final em{
+    font-style:normal; color:var(--gold);
+    background:linear-gradient(90deg, var(--gold), var(--gold-bright));
+    -webkit-background-clip:text; background-clip:text;
+  }
+
+  footer{
+    text-align:center; padding:32px 24px 48px;
+    font-family:'Noto Sans KR',sans-serif; font-size:12.5px; color:var(--ink-soft);
+  }
+
+  :focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="nav-brand">열왕기상 <span>·</span> 11장</div>
+  <div class="nav-meta">2구역 성경공부 시리즈 5부</div>
+</div>
+
+<section class="hero">
+  <canvas id="ember-canvas"></canvas>
+  <div class="hero-eyebrow">열왕기상 11장 · 솔로몬의 쇠퇴</div>
+  <h1>왕국은 찢어져도<br><em>등불은 꺼지지 않는다</em></h1>
+  <p>많은 여인을 사랑했던 왕의 마음이 나뉘던 자리에서, 하나님은 다윗에게 하신 약속을 기억하신다.</p>
+  <div class="hero-scroll"></div>
+</section>
+
+<div class="journey">
+  <div class="spine"></div>
+
+  <section class="chapter" data-dot="#E2A23A">
+    <div class="node" style="--dot:#E2A23A"></div>
+    <div class="chap-label">사랑이 이끈 곳</div>
+    <h2>파라오의 딸 이외에도, 많은 이방 여인을 사랑하다</h2>
+    <blockquote>
+      <p>“그런데 솔로몬왕은 파라오의 딸 이외에도 많은 이방 여자, 곧 모압 족속과 암몬 족속과 에돔 족속과 시돈 족속과 헷 족속의 여자들을 사랑하였다.”</p>
+      <cite>열왕기상 11:1</cite>
+    </blockquote>
+    <p>이 구절은 단순한 역사적 사실이 아니라, 하나님께서 이미 경고하신 말씀과 정면으로 맞닿아 있습니다.</p>
+    <blockquote>
+      <p>“너희들은 그들과 왕래해서는 안 되고… 왜냐하면 분명 그들이 너희의 마음을 돌려 그들의 신들을 따르게 할 것이기 때문이다.”</p>
+      <cite>열왕기상 11:2</cite>
+    </blockquote>
+    <p>하나님께서 금하신 것은 외적인 접촉 자체보다도 <strong>마음의 방향</strong>이었습니다. 사람의 마음이 어디를 향하느냐에 따라 그 사람 안에 이루어질 하나님의 경륜의 방향이 결정되기 때문입니다. 그러나 솔로몬은 그 경고를 알면서도 “사랑에 빠져 그 여자들에게 집착하였다.”(열왕기상 11:2)</p>
+  </section>
+
+  <section class="chapter" data-dot="#8C93A6">
+    <div class="node" style="--dot:#8C93A6"></div>
+    <div class="chap-label">쌓여간 선택</div>
+    <h2>칠백 명의 아내와 삼백 명의 후궁</h2>
+    <p>그 결과는 점진적으로 드러납니다.</p>
+    <blockquote>
+      <p>“그에게는 공주 출신 아내 칠백 명과 후궁 삼백 명이 있었는데, 그의 아내들이 그의 마음을 돌아서게 하였다.”</p>
+      <cite>열왕기상 11:3</cite>
+    </blockquote>
+    <p>이것은 단번의 타락이 아니라, 누적된 선택의 결과입니다. 하나님께서 사람 안에 얻고자 하신 것은 단순한 순종의 행위가 아니라, <strong>하나님께 고정된 마음</strong>이었기 때문입니다.</p>
+  </section>
+
+  <section class="chapter dim" data-dot="#8C93A6">
+    <div class="node" style="--dot:#8C93A6"></div>
+    <div class="chap-label">나뉜 마음</div>
+    <h2>다윗의 마음처럼 온전하지 못하였다</h2>
+    <blockquote>
+      <p>“솔로몬이 늙자, 아내들은 그의 마음을 돌아서게 하여 다른 신들을 따르게 하였다. 여호와 그의 하나님에 대한 그의 마음은 아버지 다윗의 마음처럼 온전하지 못하였다.”</p>
+      <cite>열왕기상 11:4</cite>
+    </blockquote>
+    <p>여기서 ‘온전하지 못하였다’는 말은 하나님과의 관계가 분열되었음을 의미합니다. 하나님은 하나의 마음, 전적인 마음을 원하셨지만, 솔로몬의 마음은 나뉘게 되었습니다.</p>
+  </section>
+
+  <section class="chapter dim" data-dot="#8C93A6">
+    <div class="node" style="--dot:#8C93A6"></div>
+    <div class="chap-label">마음에서 행동으로</div>
+    <h2>아스다롯과 밀곰을 따르다</h2>
+    <p>그 나뉜 마음은 결국 외적인 행동으로 나타납니다.</p>
+    <blockquote>
+      <p>“솔로몬은 시돈 족속의 여신 아스다롯을 따르고, 암몬 족속의 가증스러운 것인 밀곰을 따랐다.”</p>
+      <cite>열왕기상 11:5</cite>
+    </blockquote>
+    <blockquote>
+      <p>“솔로몬은 여호와께서 보시기에 악한 짓을 하여… 여호와를 온전히 따르지 못하였다.”</p>
+      <cite>열왕기상 11:6</cite>
+    </blockquote>
+  </section>
+
+  <section class="chapter dim" data-dot="#8C93A6">
+    <div class="node" style="--dot:#8C93A6"></div>
+    <div class="chap-label">예루살렘 앞에 세워진 산당</div>
+    <h2>또 하나의 중심이 세워지다</h2>
+    <p>그리고 그 절정은 이것입니다.</p>
+    <blockquote>
+      <p>“솔로몬은 예루살렘 앞에 있는 산에… 그모스를 위하여 산당을 짓고… 몰렉을 위해서도 산당을 지었다.”</p>
+      <cite>열왕기상 11:7</cite>
+    </blockquote>
+    <p>하나님의 성전이 있는 예루살렘 앞에 다른 신들을 위한 산당이 세워집니다. 이것은 단순한 우상숭배가 아니라, <strong>하나님의 거처와 대립되는 또 다른 중심</strong>이 세워진 것입니다. 하나님께서 성전을 통해 이루고자 하신 ‘하나의 중심’이 무너지는 순간입니다.</p>
+  </section>
+
+  <section class="chapter dim" data-dot="#8C93A6">
+    <div class="node" style="--dot:#8C93A6"></div>
+    <div class="chap-label">하나님의 진노</div>
+    <h2>마음이 여호와에게서 돌아섰기 때문에</h2>
+    <p>이때 하나님께서 반응하십니다.</p>
+    <blockquote>
+      <p>“여호와는 솔로몬에게 진노하셨다. 왜냐하면 그의 마음이 여호와 이스라엘의 하나님에게서 돌아섰기 때문이다.”</p>
+      <cite>열왕기상 11:9</cite>
+    </blockquote>
+  </section>
+
+  <section class="chapter dim" data-dot="#B98B34">
+    <div class="node" style="--dot:#B98B34"></div>
+    <div class="chap-label">왕국을 찢어 내리라</div>
+    <h2>계명과 율례를 지키지 않았으니</h2>
+    <p>그리고 분명하게 말씀하십니다.</p>
+    <blockquote>
+      <p>“네가 이렇게 하여… 나의 계명과 나의 율례를 지키지 않았으니, 내가 반드시 너에게서 왕국을 찢어 내어 너의 신하에게 줄 것이다.”</p>
+      <cite>열왕기상 11:11</cite>
+    </blockquote>
+    <p>여기서 ‘왕국을 찢어 낸다’는 것은 단순한 정치적 심판이 아니라, 하나님께서 사람에게 맡기셨던 통치의 표현이 더 이상 그 목적을 유지할 수 없게 되었음을 의미합니다.</p>
+  </section>
+
+  <section class="chapter" data-dot="#E2A23A">
+    <div class="node" style="--dot:#E2A23A"></div>
+    <div class="chap-label">그러나 다윗을 기억하시다</div>
+    <h2>내가 선택한 예루살렘을 생각해서</h2>
+    <p>그러나 동시에 하나님은 한 가지를 기억하십니다.</p>
+    <blockquote>
+      <p>“너의 아버지 다윗을 생각해서… 너의 때에는 그렇게 하지 않고…”</p>
+      <cite>열왕기상 11:12</cite>
+    </blockquote>
+    <blockquote>
+      <p>“나는 나의 종 다윗과 내가 선택한 예루살렘을 생각해서…”</p>
+      <cite>열왕기상 11:13</cite>
+    </blockquote>
+    <p>심판 가운데서도 하나님은 <strong>자신의 언약과 선택을 따라 일하십니다</strong>. 이것이 하나님의 경륜의 일관성입니다. 사람은 실패하지만, 하나님은 자신이 정하신 중심을 버리지 않으십니다.</p>
+  </section>
+
+  <section class="chapter" data-dot="#E2A23A">
+    <div class="node" style="--dot:#E2A23A"></div>
+    <div class="chap-label">환경을 통해 일하시는 하나님</div>
+    <h2>하닷과 르손을 대적자로 세우시다</h2>
+    <p>그 이후 하나님은 환경을 통해 역사하십니다.</p>
+    <blockquote>
+      <p>“여호와께서 솔로몬의 대적자로 에돔 사람 하닷을 일으키셨다.”</p>
+      <cite>열왕기상 11:14</cite>
+    </blockquote>
+    <blockquote>
+      <p>“하나님은… 또 다른 대적자로 르손을 일으키셨다.”</p>
+      <cite>열왕기상 11:23</cite>
+    </blockquote>
+    <p>이것은 단순한 외교적 문제나 정치적 갈등이 아니라, 하나님께서 직접 주권적으로 개입하시는 장면입니다. 하나님을 떠난 왕국은 더 이상 보호받지 못합니다.</p>
+  </section>
+
+  <section class="chapter" data-dot="#E2A23A">
+    <div class="node" style="--dot:#E2A23A"></div>
+    <div class="chap-label">여로보암의 등장</div>
+    <h2>왕국을 찢어 열 지파를 너에게 주겠다</h2>
+    <p>그리고 마침내 한 사람이 등장합니다.</p>
+    <blockquote>
+      <p>“느밧의 아들 여로보암… 그가 손을 들어 왕을 대적하였다.”</p>
+      <cite>열왕기상 11:26</cite>
+    </blockquote>
+    <p>하나님은 그에게 직접 말씀하십니다.</p>
+    <blockquote>
+      <p>“이제 내가 솔로몬의 손에서 왕국을 찢어 내어 열 지파를 너에게 주겠다.”</p>
+      <cite>열왕기상 11:31</cite>
+    </blockquote>
+  </section>
+
+  <section class="chapter" data-dot="#F6C863">
+    <div class="node" style="--dot:#F6C863"></div>
+    <div class="chap-label">남겨진 등불</div>
+    <h2>예루살렘에서 내 앞에 항상 있도록</h2>
+    <p>그러나 이 분열 속에서도 중심은 남겨집니다.</p>
+    <blockquote>
+      <p>“그의 아들에게는 한 지파를 주겠다. 그래서 나의 종 다윗에게 준 등불이… 예루살렘에서 내 앞에 항상 있도록 하겠다.”</p>
+      <cite>열왕기상 11:36</cite>
+    </blockquote>
+    <div class="split-bar">
+      <div class="ten">열 지파</div>
+      <div class="one">한 지파</div>
+    </div>
+    <p class="split-cap">왕국은 찢어지지만, 등불이 머무는 자리는 남습니다.</p>
+    <p>여기서 ‘등불’은 단순한 왕권이 아니라, 하나님께서 계속 이어 가실 <strong>계보와 약속</strong>을 의미합니다. 왕국은 나뉘지만, 하나님의 경륜은 끊어지지 않습니다.</p>
+  </section>
+
+  <section class="chapter" data-dot="#F6C863">
+    <div class="node" style="--dot:#F6C863"></div>
+    <div class="chap-label">여로보암에게도 열린 길</div>
+    <h2>나의 길을 걸으며 나의 율례와 계명을 지키면</h2>
+    <p>그리고 하나님은 여로보암에게도 동일한 길을 제시하십니다.</p>
+    <blockquote>
+      <p>“네가… 나의 길을 걸으며 나의 율례와 계명을 지켜… 올곧게 행동하면, 내가 너와 함께하며…”</p>
+      <cite>열왕기상 11:38</cite>
+    </blockquote>
+    <p>결국 하나님께서 찾으시는 것은 한 가지입니다.<br>왕국의 크기가 아니라, <strong>하나님과 일치된 사람</strong>입니다.</p>
+  </section>
+
+  <section class="chapter" data-dot="#8C93A6">
+    <div class="node" style="--dot:#8C93A6"></div>
+    <div class="chap-label">한 시대의 끝</div>
+    <h2>솔로몬이 조상들과 함께 잠들다</h2>
+    <p>이 모든 흐름은 솔로몬의 죽음으로 한 단락을 맺습니다.</p>
+    <blockquote>
+      <p>“솔로몬이 예루살렘에서 온 이스라엘을 다스린 기간은 사십 년이었다.”</p>
+      <cite>열왕기상 11:42</cite>
+    </blockquote>
+    <blockquote>
+      <p>“솔로몬은 조상들과 함께 잠들어…”</p>
+      <cite>열왕기상 11:43</cite>
+    </blockquote>
+    <p class="soft">한 시대는 끝나지만, 하나님께서 이루시려는 목적은 계속됩니다.</p>
+  </section>
+
+</div>
+
+<div class="closing">
+  <div class="chap-label">나가는 말</div>
+  <p>이 장을 따라가다 보면 자연스럽게 한 가지가 드러납니다. 하나님께서 원하신 것은 단지 지혜로운 왕도, 화려한 성전도 아니었습니다. 하나님께서 얻고자 하신 것은 <strong>하나님을 향해 온전히 열린 마음, 하나님과 하나 되는 사람, 그리고 그 사람들을 통해 표현되는 하나님의 왕국</strong>이었습니다.</p>
+  <p>사람은 그 중심에서 벗어날 수 있지만, 하나님은 그때마다 다시 중심을 회복하시며 자신의 경륜을 이어 가십니다. 왕국은 찢어지지만, 등불은 꺼지지 않습니다.</p>
+  <p class="final">그리고 그 등불은 결국, 사람의 실패를 넘어 하나님과 완전히 하나 된 참된 왕, 곧 하나님께서 사람 안에 거하시고 사람과 함께 왕국을 이루시는 그 궁극적인 목적을 향해 <em>계속 비추고 있습니다.</em></p>
+</div>
+
+<footer>열왕기상 11장 · 2구역 성경공부</footer>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // scroll reveal
+  var chapters = document.querySelectorAll('section.chapter');
+  if('IntersectionObserver' in window && !reduceMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    chapters.forEach(function(el){ io.observe(el); });
+  } else {
+    chapters.forEach(function(el){ el.classList.add('in-view'); });
+  }
+
+  // hero ember canvas
+  var canvas = document.getElementById('ember-canvas');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var w, h, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var particles = [];
+  var PARTICLE_COUNT = reduceMotion ? 0 : 42;
+
+  function resize(){
+    w = canvas.clientWidth;
+    h = canvas.clientHeight;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function makeParticle(){
+    return {
+      x: Math.random() * w,
+      y: h + Math.random() * 60,
+      r: 1 + Math.random() * 2.2,
+      speed: 0.25 + Math.random() * 0.55,
+      drift: (Math.random() - 0.5) * 0.4,
+      alpha: 0.15 + Math.random() * 0.4
+    };
+  }
+  for(var i=0;i<PARTICLE_COUNT;i++){ particles.push(makeParticle()); }
+
+  function drawStatic(){
+    ctx.clearRect(0,0,w,h);
+    ctx.save();
+    var g = ctx.createRadialGradient(w*0.5,h*0.15,0,w*0.5,h*0.15,w*0.5);
+    g.addColorStop(0, 'rgba(226,162,58,0.18)');
+    g.addColorStop(1, 'rgba(226,162,58,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0,0,w,h);
+    ctx.restore();
+  }
+
+  function tick(){
+    ctx.clearRect(0,0,w,h);
+    var g = ctx.createRadialGradient(w*0.5,h*0.15,0,w*0.5,h*0.15,w*0.5);
+    g.addColorStop(0, 'rgba(226,162,58,0.16)');
+    g.addColorStop(1, 'rgba(226,162,58,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0,0,w,h);
+
+    particles.forEach(function(p){
+      p.y -= p.speed;
+      p.x += p.drift;
+      if(p.y < -10){
+        p.y = h + 10;
+        p.x = Math.random() * w;
+      }
+      ctx.beginPath();
+      ctx.fillStyle = 'rgba(230,175,80,' + p.alpha + ')';
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fill();
+    });
+    requestAnimationFrame(tick);
+  }
+
+  if(reduceMotion){
+    drawStatic();
+  } else {
+    tick();
+  }
+})();
+</script>
+
+</body>
+</html>

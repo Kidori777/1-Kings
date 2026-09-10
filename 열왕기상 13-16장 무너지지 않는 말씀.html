@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>열왕기상 13-16장 | 왕들은 무너져도 말씀은 무너지지 않는다</title>
+<meta name="description" content="열왕기상 13장부터 16장까지, 벧엘의 표징과 여로보암의 완악함, 유다의 쇠퇴와 반복되는 왕들의 실패 속에서도 끊이지 않고 이어지는 하나님의 말씀을 따라가는 성경공부.">
+<meta property="og:title" content="열왕기상 13-16장 | 왕들은 무너져도 말씀은 무너지지 않는다">
+<meta property="og:description" content="벧엘의 표징에서 아합의 시대까지, 무너지는 왕국들 사이로 끊이지 않고 이어지는 하나님의 말씀을 따라가는 성경공부 시리즈.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F9FC;
+    --panel:#EAF1FA;
+    --ink:#14181D;
+    --ink-soft:#55606B;
+    --blue:#1657C7;
+    --blue-soft:#E9F1FC;
+    --rust:#AE3A22;
+    --rust-soft:#FBEBE7;
+    --line:#CFDCEC;
+    --closing1:#E4F0FC;
+    --closing2:#C7E0FA;
+    --max:760px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Noto Sans KR', sans-serif;
+    font-style:normal;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3, .verse p, cite{
+    font-family:'Noto Serif KR', serif;
+    font-style:normal;
+  }
+  p{ margin:0 0 20px; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:96px 0 80px;
+    background:linear-gradient(180deg, #FBFDFF 0%, var(--bg) 100%);
+    border-bottom:1px solid var(--line);
+  }
+  #heroCanvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    opacity:0.55;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:1;
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 24px;
+  }
+  .kicker{
+    margin:0 0 22px;
+    font-size:14px;
+    letter-spacing:0.01em;
+    color:var(--blue);
+    font-weight:600;
+  }
+  .hero h1{
+    margin:0 0 20px;
+    font-size:clamp(30px, 5.4vw, 46px);
+    font-weight:700;
+    line-height:1.4;
+    color:var(--ink);
+  }
+  .hero-sub{
+    margin:0;
+    font-size:17px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- timeline / chapter sections ---------- */
+  main{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+
+  .chapter{
+    display:grid;
+    grid-template-columns:48px 1fr;
+    gap:20px;
+    padding:56px 0;
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .chapter.in-view{ opacity:1; transform:translateY(0); }
+
+  .node-col{
+    position:relative;
+    display:flex;
+    justify-content:center;
+  }
+  .node-col::before{
+    content:'';
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:var(--line);
+    transform:translateX(-50%);
+  }
+  .chapter:first-of-type .node-col::before{ top:50%; }
+  .chapter:last-of-type .node-col::before{ bottom:50%; }
+
+  .node-dot{
+    position:relative;
+    top:6px;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#fff;
+    border:2px solid var(--blue);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Noto Sans KR', sans-serif;
+    font-weight:700;
+    font-size:14px;
+    color:var(--blue);
+  }
+
+  .chapter-inner h2{
+    margin:2px 0 24px;
+    font-size:clamp(22px, 3.4vw, 27px);
+    font-weight:600;
+    color:var(--ink);
+  }
+  .chapter-range{
+    display:block;
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:0 0 8px;
+  }
+
+  p{ color:var(--ink); font-size:16.5px; }
+
+  blockquote.verse{
+    margin:28px 0;
+    padding:20px 24px;
+    border-left:3px solid var(--blue);
+    background:var(--blue-soft);
+    border-radius:2px;
+  }
+  blockquote.verse.judgment{
+    border-left-color:var(--rust);
+    background:var(--rust-soft);
+  }
+  blockquote.verse p{
+    margin:0 0 10px;
+    font-size:17.5px;
+    line-height:1.85;
+    color:var(--ink);
+  }
+  blockquote.verse cite{
+    display:block;
+    font-style:normal;
+    font-size:13px;
+    color:var(--ink-soft);
+    text-align:right;
+  }
+
+  /* ---------- closing ---------- */
+  .closing{
+    grid-template-columns:1fr;
+    padding:0;
+  }
+  .closing .node-col{ display:none; }
+  .closing-inner{
+    background:linear-gradient(160deg, var(--closing1), var(--closing2));
+    border-radius:6px;
+    padding:44px 32px;
+    margin:8px 0 64px;
+  }
+  .closing-inner h2{
+    margin:0 0 22px;
+    font-size:clamp(22px, 3.6vw, 28px);
+    color:var(--ink);
+  }
+  .closing-inner p{ color:var(--ink); }
+
+  footer{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:32px 24px 64px;
+    border-top:1px solid var(--line);
+  }
+  footer p{
+    margin:0;
+    font-size:13.5px;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:560px){
+    .chapter{ grid-template-columns:32px 1fr; gap:14px; padding:44px 0; }
+    .node-dot{ width:28px; height:28px; font-size:12px; }
+    blockquote.verse{ padding:16px 18px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .chapter{ transition:none; opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <p class="kicker">열왕기상 성경공부 시리즈 · 일곱 번째 이야기</p>
+    <h1>왕들은 무너져도<br>말씀은 무너지지 않는다</h1>
+    <p class="hero-sub">열왕기상 13장 – 16장</p>
+  </div>
+</header>
+
+<main>
+
+  <section class="chapter">
+    <div class="node-col"><span class="node-dot">1</span></div>
+    <div class="chapter-inner">
+      <span class="chapter-range">13장 1–5절</span>
+      <h2>벧엘의 표징</h2>
+
+      <blockquote class="verse">
+        <p>“여로보암이 제단 옆에 서서 향을 피우려고 할 바로 그때, 하나님의 사람이 여호와의 말씀에 따라 유다에서 벧엘로 왔다.”</p>
+        <cite>열왕기상 13:1</cite>
+      </blockquote>
+
+      <p>이 시작은 단순한 사건의 기록이 아니라, 하나님께서 사람의 종교적 열심 속으로 들어오시는 방식 자체를 보여 줍니다. 여로보암은 제단 앞에 서 있습니다. 그는 하나님을 섬긴다고 생각하지만, 그 제단은 하나님께서 세우신 것이 아니라 사람의 두려움과 계산에서 나온 것입니다. 바로 그때 하나님은 “유다에서 온 하나님의 사람”을 보내십니다. 하나님은 사람이 만든 체계 안에 머무르지 않으시고, 그 체계를 깨뜨리기 위해 말씀으로 개입하십니다.</p>
+
+      <p>그 하나님의 사람은 제단을 향해 외칩니다.</p>
+
+      <blockquote class="verse">
+        <p>“제단아! 제단아! 여호와께서 이렇게 말씀하신다. ‘보아라, 다윗 집에 한 아들이 태어나리니, 그의 이름은 요시야다…’ ”</p>
+        <cite>열왕기상 13:2</cite>
+      </blockquote>
+
+      <p>여기서 하나님은 현재의 타락을 넘어 미래를 선언하십니다. 아직 존재하지 않는 한 사람을 미리 말씀하시며, 결국 그 제단이 무너질 것을 선포하십니다. 이것은 하나님께서 순간적인 개혁이 아니라, 그분의 경륜 안에서 시간을 관통하여 일하신다는 것을 보여 줍니다.</p>
+
+      <p>이어지는 표징—</p>
+
+      <blockquote class="verse">
+        <p>“이 제단이 갈라지고 그 위에 있는 재가 쏟아질 것입니다.”</p>
+        <cite>열왕기상 13:3</cite>
+      </blockquote>
+
+      <p>그리고 실제로</p>
+
+      <blockquote class="verse judgment">
+        <p>“제단이 갈라지고 재가 제단에서 쏟아졌다.”</p>
+        <cite>열왕기상 13:5</cite>
+      </blockquote>
+
+      <p>이 장면은 사람이 세운 종교적 형식이 얼마나 쉽게 무너질 수 있는지를 드러냅니다. 더 나아가 왕의 손이 오그라드는 사건은 하나님을 대적하는 인간의 힘이 얼마나 무력한지를 보여 줍니다. 그러나 왕이 간청하자 손은 다시 회복됩니다. 하나님은 심판 가운데서도 회복의 길을 열어 두십니다. 이것이 하나님의 방식입니다—심판과 긍휼이 동시에 흐릅니다.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="node-col"><span class="node-dot">2</span></div>
+    <div class="chapter-inner">
+      <span class="chapter-range">13장 18–32절</span>
+      <h2>흔들린 순종</h2>
+
+      <p>그런데 이야기는 예상 밖으로 전개됩니다. 왕의 유혹을 거절했던 하나님의 사람이, 늙은 신언자의 말에는 흔들립니다.</p>
+
+      <blockquote class="verse judgment">
+        <p>“한 천사가… 말했다… 그러나 그것은 거짓말이었다.”</p>
+        <cite>열왕기상 13:18</cite>
+      </blockquote>
+
+      <p>여기서 하나님은 더 깊은 것을 드러내십니다. 하나님의 사람이라 할지라도, 하나님께 직접 받은 말씀보다 사람의 말—심지어 ‘영적인 권위’를 가진 사람의 말—을 더 신뢰할 때 길을 잃을 수 있다는 것입니다.</p>
+
+      <p>결국 그는 하나님의 명령을 어기고 돌아가다가 죽임을 당합니다.</p>
+
+      <blockquote class="verse judgment">
+        <p>“그가 여호와의 말씀을 거스른 하나님의 사람입니다.”</p>
+        <cite>열왕기상 13:26</cite>
+      </blockquote>
+
+      <p>이 사건은 매우 엄중합니다. 하나님은 그분의 말씀을 가볍게 여기지 않으십니다. 그분의 경륜 안에서 말씀은 단순한 지침이 아니라, 하나님 자신과 연결되는 생명의 길이기 때문입니다.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="node-col"><span class="node-dot">3</span></div>
+    <div class="chapter-inner">
+      <span class="chapter-range">13장 33절 – 14장 20절</span>
+      <h2>돌이키지 않는 마음</h2>
+
+      <p>그리고 다시 초점은 여로보암에게로 돌아옵니다.</p>
+
+      <blockquote class="verse judgment">
+        <p>“이런 일이 있은 후에도 여로보암은 자신의 악한 길에서 돌아서지 않고…”</p>
+        <cite>열왕기상 13:33</cite>
+      </blockquote>
+
+      <p>이 한 구절은 인간의 상태를 깊이 드러냅니다. 기적을 보고, 표징을 경험하고, 심판을 목격했음에도 사람은 돌이키지 않습니다. 하나님께서 원하시는 것은 외적인 증거가 아니라, 마음의 방향이 하나님께로 향하는 것입니다.</p>
+
+      <p>14장으로 넘어가면, 여로보암의 집에 대한 판결이 선포됩니다. 그러나 그 가운데서도 한 아이에 대해 이렇게 말씀하십니다.</p>
+
+      <blockquote class="verse">
+        <p>“그 아이에게서만 여호와 이스라엘의 하나님을 향한 선한 것이 발견되었기 때문입니다.”</p>
+        <cite>열왕기상 14:13</cite>
+      </blockquote>
+
+      <p>하나님은 전체가 무너진 가운데서도 한 사람을 찾으십니다. 이것은 하나님의 경륜이 집단 속에서도 개인을 향해 있다는 것을 보여 줍니다. 하나님은 언제나 자신을 향한 반응을 찾으십니다.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="node-col"><span class="node-dot">4</span></div>
+    <div class="chapter-inner">
+      <span class="chapter-range">14장 21–31절</span>
+      <h2>유다의 쇠퇴</h2>
+
+      <p>그러나 유다 역시 다르지 않습니다.</p>
+
+      <blockquote class="verse judgment">
+        <p>“유다는 여호와께서 보시기에 악한 짓을 하였다.”</p>
+        <cite>열왕기상 14:22</cite>
+      </blockquote>
+
+      <p>성전이 있는 예루살렘조차 하나님을 잃어버릴 수 있습니다. 결국 금 방패는 사라지고 놋 방패로 대체됩니다(열왕기상 14:26-27). 영광의 실재는 사라지고, 형식만 남는 모습입니다.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="node-col"><span class="node-dot">5</span></div>
+    <div class="chapter-inner">
+      <span class="chapter-range">15장 – 16장 30절</span>
+      <h2>반복되는 실패</h2>
+
+      <p>이후의 왕들의 기록은 반복처럼 이어집니다.</p>
+
+      <blockquote class="verse judgment">
+        <p>“여로보암의 길을 따르며 이스라엘을 죄짓게 하였다.”</p>
+        <cite>열왕기상 15:34, 16:26</cite>
+      </blockquote>
+
+      <p>이 반복은 단순한 역사 기록이 아니라, 하나님 없이 세워진 모든 체계의 결말을 보여 줍니다. 사람은 왕을 바꾸지만, 근본이 바뀌지 않으면 결과도 바뀌지 않습니다.</p>
+
+      <p>그러나 그 가운데서도 하나님은 한 기준을 유지하십니다.</p>
+
+      <blockquote class="verse">
+        <p>“다윗처럼 여호와께서 보시기에 올곧은 일을 하였다.”</p>
+        <cite>열왕기상 15:11</cite>
+      </blockquote>
+
+      <p>완전함이 아니라, 하나님을 향한 마음—이것이 하나님께서 보시는 기준입니다.</p>
+
+      <p>그리고 마침내 이렇게 말합니다.</p>
+
+      <blockquote class="verse judgment">
+        <p>“아합은 이전 모든 왕보다 여호와께서 보시기에 더 악한 짓을 하였다.”</p>
+        <cite>열왕기상 16:30</cite>
+      </blockquote>
+
+      <p>이 지점에 이르면, 이야기는 점점 더 어두워지는 것처럼 보입니다. 그러나 이 흐름을 따라가다 보면, 오히려 하나님의 의도가 더 선명해집니다. 사람의 왕국은 결국 무너질 수밖에 없다는 것, 그리고 하나님은 그 실패의 역사 속에서 다른 것을 이루고 계신다는 것입니다.</p>
+    </div>
+  </section>
+
+  <section class="chapter closing">
+    <div class="node-col"><span class="node-dot">6</span></div>
+    <div class="chapter-inner">
+      <div class="closing-inner">
+        <h2>무너지지 않는 나라</h2>
+        <p>제단은 무너지고, 왕들은 사라지고, 집안은 끊어집니다. 그러나 하나님의 말씀은 계속 이어집니다. 그리고 그 말씀은 결국 한 방향을 가리킵니다. 사람의 손으로 세운 왕국이 아니라, 하나님 자신이 왕이 되시는 왕국.</p>
+        <p>이 모든 흐름 속에서 천천히 깨닫게 되는 것은 이것입니다. 하나님은 외적인 왕국을 세우시는 것이 아니라, 그분의 말씀에 의해 다스림받는 사람, 그리고 그분과 하나 되어 사는 사람을 얻고자 하신다는 것입니다.</p>
+        <p>결국 하나님의 경륜은 역사 속 왕들의 흥망이 아니라, 하나님과 사람이 연합되는 데 있습니다. 그럴 때에만 무너지지 않는 참된 왕국이 세워지기 때문입니다.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>열왕기상 성경공부 시리즈 · 13장–16장</p>
+</footer>
+
+<script>
+  // 스크롤 리빌: 섹션이 화면에 들어올 때 한 번씩 드러남
+  const chapters = document.querySelectorAll('.chapter');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    chapters.forEach(ch=>io.observe(ch));
+  } else {
+    chapters.forEach(ch=>ch.classList.add('in-view'));
+  }
+
+  // 히어로 캔버스: 신호가 흐르는 회로 같은 파형 애니메이션
+  (function(){
+    const canvas = document.getElementById('heroCanvas');
+    const ctx = canvas.getContext('2d');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let w, h, dpr;
+
+    function resize(){
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = canvas.offsetWidth;
+      h = canvas.offsetHeight;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    const lines = [
+      { amp: 18, freq: 0.012, speed: 0.010, y: 0.30, color: 'rgba(22,87,199,0.28)', width: 1.4 },
+      { amp: 26, freq: 0.008, speed: 0.006, y: 0.55, color: 'rgba(22,87,199,0.16)', width: 1.2 },
+      { amp: 14, freq: 0.017, speed: 0.014, y: 0.78, color: 'rgba(174,58,34,0.14)', width: 1.2 }
+    ];
+
+    function drawFrame(t){
+      ctx.clearRect(0,0,w,h);
+      lines.forEach(line=>{
+        ctx.beginPath();
+        ctx.strokeStyle = line.color;
+        ctx.lineWidth = line.width;
+        const baseY = h * line.y;
+        for(let x=0; x<=w; x+=6){
+          const y = baseY + Math.sin(x*line.freq + t*line.speed) * line.amp;
+          if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+        }
+        ctx.stroke();
+      });
+    }
+
+    if(reduceMotion){
+      drawFrame(0);
+    } else {
+      let frame = 0;
+      function loop(){
+        frame += 1;
+        drawFrame(frame);
+        requestAnimationFrame(loop);
+      }
+      loop();
+    }
+  })();
+</script>
+
+</body>
+</html>

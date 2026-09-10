@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>끊이지 않는 공급 — 열왕기상 17-19장</title>
+<meta name="description" content="열왕기상 17장부터 19장까지, 하늘을 닫으시고 다시 여시며 끊임없이 공급하시는 하나님의 경륜을 따라가는 성경공부 페이지. 까마귀의 공급, 사르밧 과부, 갈멜산의 불, 호렙산의 세미한 음성.">
+<meta property="og:title" content="끊이지 않는 공급 — 열왕기상 17-19장">
+<meta property="og:description" content="가루는 쌓이지 않지만 떨어지지도 않고, 기름은 넘치지 않지만 끊어지지도 않습니다 — 매일 이어지는 하나님의 공급을 따라가 봅니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky-base:      #eef4f4;
+    --sky-base-2:    #e3edec;
+    --dust-amber:    #c1854a;
+    --ember:         #d1573a;
+    --rain-teal:     #21767c;
+    --twilight:      #6a5a8c;
+    --remnant-green: #4f7d5a;
+    --ink:           #1c2624;
+    --ink-soft:      #4b5a58;
+    --hair:          rgba(28,38,36,0.12);
+    --accent: var(--dust-amber);
+    --maxw: 700px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--sky-base);
+    color:var(--ink);
+    font-family:'Noto Sans KR', sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{ background:var(--accent); color:#fff; }
+  a{ color:inherit; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:32px 24px 80px;
+    overflow:hidden;
+  }
+  .hero canvas{ position:absolute; inset:0; width:100%; height:100%; z-index:0; }
+  .hero-content{ position:relative; z-index:2; max-width:680px; }
+  .hero-kicker{
+    font-size:14px; letter-spacing:0.02em; color:var(--ink-soft);
+    margin-bottom:22px; display:flex; align-items:center; justify-content:center; gap:10px;
+  }
+  .hero-kicker .dot{
+    width:6px;height:6px;border-radius:50%; background:var(--dust-amber);
+    box-shadow:0 0 0 3px rgba(193,133,74,0.18);
+  }
+  .hero h1{
+    font-size:clamp(34px, 6vw, 56px); line-height:1.28; font-weight:700;
+    margin:0 0 20px; letter-spacing:-0.01em;
+  }
+  .hero h1 .soft{ color:var(--ink-soft); font-weight:500; }
+  .hero p.lede{
+    font-size:17px; line-height:1.8; color:var(--ink-soft);
+    max-width:520px; margin:0 auto 40px;
+  }
+  .hero-scroll{ font-size:13px; color:var(--ink-soft); display:inline-flex; align-items:center; gap:8px; }
+  .hero-scroll .line{
+    width:1px; height:34px;
+    background:linear-gradient(var(--ink-soft), transparent);
+    animation:drip 2.2s ease-in-out infinite;
+  }
+  @keyframes drip{
+    0%{ transform:scaleY(0.2); transform-origin:top; opacity:.3;}
+    50%{ transform:scaleY(1); transform-origin:top; opacity:1;}
+    100%{ transform:scaleY(0.2); transform-origin:bottom; opacity:.3;}
+  }
+
+  /* ---------- FLOW GAUGE (지속적 공급 = 차오르는 흐름) ---------- */
+  .flow{
+    position:fixed;
+    right:30px; top:50%; transform:translateY(-50%);
+    z-index:40;
+    display:flex; align-items:center; gap:14px;
+  }
+  .flow-readout{
+    text-align:right; font-size:11px; color:var(--ink-soft); line-height:1.5;
+    transition:color .4s ease;
+  }
+  .flow-readout .label{ display:block; }
+  .flow-readout .num{
+    display:block; font-size:19px; font-weight:700;
+    font-variant-numeric:tabular-nums; color:var(--accent);
+    transition:color .4s ease;
+  }
+  .flow-vessel{
+    width:8px; height:220px;
+    border-radius:5px;
+    background:rgba(28,38,36,0.06);
+    border:1px solid var(--hair);
+    position:relative;
+    overflow:hidden;
+  }
+  .flow-fill{
+    position:absolute; left:0; right:0; bottom:0;
+    height:11%;
+    background:var(--accent);
+    transition:height .5s cubic-bezier(.4,0,.2,1), background .4s ease;
+  }
+  @media (max-width: 880px){ .flow{ display:none; } }
+
+  /* ---------- SECTIONS ---------- */
+  main{ position:relative; z-index:1; }
+  section.beat{
+    position:relative;
+    padding:110px 24px 40px;
+    max-width:var(--maxw);
+    margin:0 auto;
+  }
+  section.beat::before{
+    content:'';
+    position:absolute; top:0; left:50%; transform:translateX(-50%);
+    width:100vw; height:100%;
+    background:radial-gradient(ellipse 900px 500px at 50% 0%, color-mix(in srgb, var(--accent) 7%, transparent), transparent 70%);
+    z-index:-1; pointer-events:none;
+  }
+  .state-label{
+    display:flex; align-items:center; gap:10px;
+    font-size:14px; color:var(--accent); font-weight:500;
+    margin-bottom:18px; transition:color .4s ease;
+  }
+  .state-label .ref{ color:var(--ink-soft); font-weight:400; }
+  .state-label::before{
+    content:''; width:16px; height:1px; background:var(--accent);
+    transition:background .4s ease;
+  }
+  h2.beat-title{
+    font-size:clamp(24px, 3.4vw, 32px); line-height:1.4; font-weight:700;
+    margin:0 0 28px; max-width:12em;
+  }
+  blockquote.scripture{
+    margin:0 0 30px; padding:22px 26px;
+    border-left:2px solid var(--accent);
+    background:color-mix(in srgb, var(--accent) 5%, #fff);
+    font-family:'Noto Serif KR', serif;
+    font-size:17px; line-height:2; color:var(--ink);
+  }
+  blockquote.scripture cite{
+    display:block; margin-top:14px; font-style:normal;
+    font-family:'Noto Sans KR', sans-serif; font-size:13px; color:var(--ink-soft);
+  }
+  .beat p{ font-size:16px; line-height:1.95; color:var(--ink); margin:0 0 22px; max-width:62ch; }
+  .beat p strong{ font-weight:500; color:var(--ink); }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  .colophon{
+    max-width:var(--maxw); margin:60px auto 0; padding:50px 24px 90px;
+    border-top:1px solid var(--hair); text-align:center;
+  }
+  .colophon p{ font-size:14px; color:var(--ink-soft); line-height:1.9; max-width:46ch; margin:0 auto; }
+
+  .topbar{ position:fixed; top:0; left:0; right:0; height:3px; z-index:50; background:var(--hair); }
+  .topbar-fill{ height:100%; width:0%; background:var(--accent); transition:width .1s linear, background .4s ease; }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-fill" id="topbarFill"></div></div>
+
+<div class="flow" id="flow">
+  <div class="flow-vessel"><div class="flow-fill" id="flowFill"></div></div>
+  <div class="flow-readout">
+    <span class="label" id="flowLabel">닫힌 하늘</span>
+    <span class="num" id="flowNum">01/09</span>
+  </div>
+</div>
+
+<header class="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-kicker"><span class="dot"></span>열왕기상 17 – 19장</div>
+    <h1>끊이지 않는<br><span class="soft">공급</span></h1>
+    <p class="lede">가루는 쌓이지 않지만 떨어지지도 않고, 기름은 넘치지 않지만 끊어지지도 않습니다. 하늘을 닫으신 하나님은 매일, 조금씩, 사람을 그분께로 이끄십니다.</p>
+    <div class="hero-scroll"><span class="line"></span>아래로 읽어가기</div>
+  </div>
+</header>
+
+<main>
+
+<section class="beat" data-accent="dust-amber" data-label="닫힌 하늘" data-idx="1">
+  <div class="state-label reveal"><span class="ref">17:1</span>닫힌 하늘</div>
+  <h2 class="beat-title reveal">닫힌 것은 하늘이 아니라, 먼저 마음이었다</h2>
+  <blockquote class="scripture reveal">
+    “길르앗 주민 가운데 디셉 사람 엘리야가 아합에게 말하였다. ‘내가 섬기는 여호와 이스라엘의 하나님께서 살아 계신 것을 두고 맹세하는데, 앞으로 몇 년 동안 내 말이 없이는 이슬이나 비가 내리지 않을 것입니다.’”
+    <cite>열왕기상 17:1</cite>
+  </blockquote>
+  <p class="reveal">이 한마디는 단순한 예언이 아니라, 보이지 않는 하나님께서 보이는 역사 가운데 들어오시는 방식의 선언입니다. 비가 멈춘다는 것은 단순한 기후의 변화가 아니라, 생명의 흐름이 끊어진다는 뜻이며, 하나님께서 그분의 백성의 상태를 드러내시기 위해 하늘을 닫으신 사건입니다.</p>
+  <p class="reveal">사람은 땅에서 살지만, 생명은 하늘에서 옵니다. <strong>하나님께서는 하늘을 닫으심으로, 그들의 마음이 이미 닫혀 있었음을 드러내십니다.</strong></p>
+</section>
+
+<section class="beat" data-accent="dust-amber" data-label="은밀한 공급" data-idx="2">
+  <div class="state-label reveal"><span class="ref">17:3-7</span>은밀한 공급</div>
+  <h2 class="beat-title reveal">흐르시기 전에, 먼저 채워지는 그릇</h2>
+  <blockquote class="scripture reveal">
+    “이곳을 떠나 동쪽으로 가서… 그릿 마른강 가에서 숨어 지내라… 내가 까마귀들에게 명하여… 먹을 것을 주게 하겠다.”
+    <cite>열왕기상 17:3-4</cite>
+  </blockquote>
+  <p class="reveal">하나님께서 이스라엘 전체를 다루시는 동시에, 한 사람을 은밀히 다루십니다. 공적인 심판과 개인적인 공급이 동시에 진행됩니다. 엘리야는 세상 가운데서 하나님을 대표하지만, 동시에 하나님께 의존하는 한 사람일 뿐입니다. 그는 왕 앞에서는 담대하지만, 마른강가에서는 전적으로 공급받는 존재입니다.</p>
+  <blockquote class="scripture reveal">
+    “까마귀들이 아침이면… 저녁에도… 그는 마른강 물을 마셨다.”
+    <cite>열왕기상 17:6</cite>
+  </blockquote>
+  <p class="reveal">하나님의 경륜은 사람을 단순히 사용하시는 데 있지 않고, 그 사람을 통해 흐르시기 전에 먼저 그 사람 안으로 공급되시는 데 있습니다. 엘리야는 말씀을 선포하는 입이기 전에, 먼저 공급을 받는 그릇이 됩니다. 그러나 그 공급마저도 끊깁니다.</p>
+  <blockquote class="scripture reveal">
+    “그 땅에 비가 내리지 않아… 마른강이 완전히 말라 버렸다.”
+    <cite>열왕기상 17:7</cite>
+  </blockquote>
+  <p class="reveal">하나님께서 주신 환경조차도 영원하지 않습니다. 하나님은 사람을 특정한 방법에 머물게 하지 않으시고, 계속해서 그분 자신께로 이끄십니다.</p>
+</section>
+
+<section class="beat" data-accent="ember" data-label="결핍의 자리" data-idx="3">
+  <div class="state-label reveal"><span class="ref">17:9-14</span>결핍의 자리</div>
+  <h2 class="beat-title reveal">가장 결핍된 자리에서 드러나는 풍성</h2>
+  <blockquote class="scripture reveal">
+    “일어나 시돈에 속한 사르밧으로 가라. 내가 한 과부에게 명령하여…”
+    <cite>열왕기상 17:9</cite>
+  </blockquote>
+  <p class="reveal">이방 땅, 가난한 과부, 마지막 한 끼를 준비하는 절망의 자리. 하나님은 가장 결핍된 자리에서 그분의 풍성을 나타내십니다.</p>
+  <blockquote class="scripture reveal">
+    “나에게 떡은 하나도 없고… 가루 한 움큼과 기름 몇 방울…”
+    <cite>열왕기상 17:12</cite>
+  </blockquote>
+  <p class="reveal">이 여인의 상태는 단순한 가난이 아니라, 인간 존재의 한계를 보여 줍니다. 그러나 하나님은 그 한계 위에 말씀하십니다.</p>
+  <blockquote class="scripture reveal">
+    “나 여호와가 지면에 비를 내리는 날까지, 가루 담는 통도 비지 않고 기름 담는 병도 마르지 않을 것이다.”
+    <cite>열왕기상 17:14</cite>
+  </blockquote>
+  <p class="reveal">여기서 드러나는 하나님의 의도는 ‘기적’ 자체가 아니라 <strong>‘지속적인 공급’</strong>입니다. 하나님은 한 번 채우시는 분이 아니라, 매일 유지하시는 분입니다. 가루는 쌓이지 않지만 떨어지지도 않고, 기름은 넘치지 않지만 끊어지지도 않습니다. 이것은 하나님께서 사람 안에서 역사하시는 방식 — 순간의 충만이 아니라, 계속적인 생명의 공급 — 을 보여 줍니다.</p>
+</section>
+
+<section class="beat" data-accent="rain-teal" data-label="진짜 문제" data-idx="4">
+  <div class="state-label reveal"><span class="ref">17:17-24</span>진짜 문제</div>
+  <h2 class="beat-title reveal">공급이 있어도 남아 있는, 죽음이라는 문제</h2>
+  <blockquote class="scripture reveal">
+    “그 집주인인 과부의 아들이… 숨을 거두고 말았다.”
+    <cite>열왕기상 17:17</cite>
+  </blockquote>
+  <p class="reveal">공급이 있어도 죽음은 남아 있습니다. 인간의 가장 깊은 문제는 결핍이 아니라 죽음입니다.</p>
+  <blockquote class="scripture reveal">
+    “내 죄악이 기억나게 하시고 내 아들을 죽게 하십니까?”
+    <cite>열왕기상 17:18</cite>
+  </blockquote>
+  <p class="reveal">죽음은 죄를 드러냅니다. 그리고 그 죽음 앞에서 엘리야는 하나님께 나아갑니다.</p>
+  <blockquote class="scripture reveal">
+    “여호와 저의 하나님! 부디 이 아이의 혼이 다시 그에게 돌아오게 하여 주십시오!”
+    <cite>열왕기상 17:21</cite>
+  </blockquote>
+  <p class="reveal"><strong>“여호와께서… 아이의 혼이 다시 그에게 돌아오게 하셨다.”</strong>(17:22) 여기서 하나님의 경륜은 한 걸음 더 전진합니다. 공급의 하나님에서, 생명을 주시는 하나님으로 드러나십니다.</p>
+  <blockquote class="scripture reveal">
+    “어르신 입에 있는 여호와의 말씀이 진리라는 것을 알았습니다.”
+    <cite>열왕기상 17:24</cite>
+  </blockquote>
+  <p class="reveal">이제 하나님은 단순한 공급자가 아니라, 참되신 분으로 계시됩니다.</p>
+</section>
+
+<section class="beat" data-accent="ember" data-label="나뉜 마음" data-idx="5">
+  <div class="state-label reveal"><span class="ref">18:1-26</span>나뉜 마음</div>
+  <h2 class="beat-title reveal">비가 오기 전, 먼저 돌이켜야 할 마음</h2>
+  <blockquote class="scripture reveal">
+    “가서, 아합에게 너 자신을 보여라. 내가 지면에 비를 내릴 것이다.”
+    <cite>열왕기상 18:1</cite>
+  </blockquote>
+  <p class="reveal">닫혔던 하늘이 열리기 직전, 하나님은 먼저 백성의 마음을 돌이키기를 원하십니다. 그래서 갈멜산에서의 대면이 이루어집니다.</p>
+  <blockquote class="scripture reveal">
+    “여러분은 언제까지 두 의견 사이에서 우왕좌왕할 것입니까?”
+    <cite>열왕기상 18:21</cite>
+  </blockquote>
+  <p class="reveal">이 질문은 단순한 선택의 문제가 아니라, 존재의 방향에 관한 것입니다. 하나님은 나뉜 마음을 원하지 않으십니다.</p>
+  <blockquote class="scripture reveal">
+    “불로 응답하시는 하나님, 그분께서 곧 하나님이십니다.”
+    <cite>열왕기상 18:24</cite>
+  </blockquote>
+  <p class="reveal">사람의 종교는 부르짖지만 응답이 없습니다. <strong>“아무런 음성도 없었고 아무런 응답도 없었다.”</strong>(18:26) 그러나 엘리야는 무너진 제단을 다시 쌓습니다. 열두 돌을 쌓아 이스라엘의 본래 상태를 회복합니다. 하나님은 먼저 사람의 기초를 회복하신 후, 불을 내리십니다.</p>
+</section>
+
+<section class="beat" data-accent="rain-teal" data-label="임하신 불, 내린 비" data-idx="6">
+  <div class="state-label reveal"><span class="ref">18:38-41</span>임하신 불, 내린 비</div>
+  <h2 class="beat-title reveal">불은 능력이 아니라, 임재였다</h2>
+  <blockquote class="scripture reveal">
+    “여호와의 불이 내려와 번제물과… 돌들과 먼지를 삼켜 버렸다.”
+    <cite>열왕기상 18:38</cite>
+  </blockquote>
+  <p class="reveal">불은 단순한 능력이 아니라, 하나님 자신이 임하신 것입니다. 그 결과 백성은 고백합니다.</p>
+  <blockquote class="scripture reveal">
+    “여호와, 그분께서 하나님이시다!”
+    <cite>열왕기상 18:39</cite>
+  </blockquote>
+  <p class="reveal">이 고백 뒤에 비가 옵니다.</p>
+  <blockquote class="scripture reveal">
+    “많은 비가 내리는 소리가 들리니…”
+    <cite>열왕기상 18:41</cite>
+  </blockquote>
+  <p class="reveal">비는 단순한 축복이 아니라, <strong>회복된 관계의 결과</strong>입니다. 하나님과의 관계가 회복될 때, 생명의 흐름이 다시 시작됩니다.</p>
+</section>
+
+<section class="beat" data-accent="twilight" data-label="세미한 음성" data-idx="7">
+  <div class="state-label reveal"><span class="ref">19:1-12</span>세미한 음성</div>
+  <h2 class="beat-title reveal">승리는 사람을 유지시키지 못한다</h2>
+  <p class="reveal">그러나 놀랍게도, 그 큰 승리 뒤에 엘리야는 무너집니다.</p>
+  <blockquote class="scripture reveal">
+    “엘리야는 두려워서… 도망하였다.”
+    <cite>열왕기상 19:3</cite>
+  </blockquote>
+  <p class="reveal">사람의 상태는 외적인 승리로 유지되지 않습니다. 하나님은 이제 엘리야를 더 깊은 방식으로 다루십니다. 광야, 로뎀나무 아래, 죽음을 구하는 기도.</p>
+  <blockquote class="scripture reveal">
+    “오, 여호와님! 이것으로 충분하니 제 목숨을 거두어 주십시오.”
+    <cite>열왕기상 19:4</cite>
+  </blockquote>
+  <p class="reveal">그때 하나님은 책망하지 않으시고 먹이십니다.</p>
+  <blockquote class="scripture reveal">
+    “일어나서 드십시오… 갈 길이 아주 멉니다.”
+    <cite>열왕기상 19:7</cite>
+  </blockquote>
+  <p class="reveal">하나님의 경륜은 사람을 소모시키는 것이 아니라, 회복시키며 이끄시는 것입니다. 마침내 호렙 산에서, 하나님은 자신을 드러내십니다.</p>
+  <blockquote class="scripture reveal">
+    “크고 강한 바람… 그러나 여호와는 그 바람 가운데에 계시지 않았다… 지진… 불… 그러나… 그 가운데에도 계시지 않았다.”
+    <cite>열왕기상 19:11-12</cite>
+  </blockquote>
+  <p class="reveal">그리고,</p>
+  <blockquote class="scripture reveal">
+    “부드럽고 나지막한 음성”
+    <cite>열왕기상 19:12</cite>
+  </blockquote>
+  <p class="reveal">하나님은 격렬한 능력으로만 일하시는 분이 아니라, 사람의 깊은 내면에 말씀하시는 분입니다. 엘리야가 깨닫는 것은, 하나님의 역사가 외적인 기적에만 있지 않고, 내적인 음성 안에도 있다는 사실입니다.</p>
+</section>
+
+<section class="beat" data-accent="remnant-green" data-label="이어지는 생명" data-idx="8">
+  <div class="state-label reveal"><span class="ref">19:18-19</span>이어지는 생명</div>
+  <h2 class="beat-title reveal">한 사람으로 끝나지 않는 흐름</h2>
+  <p class="reveal">그리고 하나님은 그에게 다시 위임하십니다. 왕들을 세우고, 다음 세대를 준비하게 하시며, 한 사람 엘리사를 부르십니다.</p>
+  <blockquote class="scripture reveal">
+    “엘리야는… 엘리사에게 자신의 겉옷을 던져 주었다.”
+    <cite>열왕기상 19:19</cite>
+  </blockquote>
+  <p class="reveal">하나님의 일은 한 사람으로 끝나지 않습니다. 흐름은 이어지고, 생명은 전달됩니다.</p>
+  <blockquote class="scripture reveal">
+    “내가 나를 위하여… 칠천 명을 남겨 두었다.”
+    <cite>열왕기상 19:18</cite>
+  </blockquote>
+  <p class="reveal">엘리야는 혼자라고 생각했지만, 하나님은 그분의 백성을 이미 보존하고 계셨습니다.</p>
+</section>
+
+<section class="beat" data-accent="remnant-green" data-label="함께 움직이는 흐름" data-idx="9">
+  <div class="state-label reveal"><span class="ref">경륜</span>함께 움직이는 흐름</div>
+  <h2 class="beat-title reveal">그분 자신을 담고 이어가는 사람들</h2>
+  <p class="reveal">이 모든 흐름 속에서 드러나는 하나님의 경륜은 분명합니다. 하나님은 단순히 문제를 해결하시는 분이 아니라, 사람을 그분 자신께로 이끄시는 분입니다. 하늘을 닫으시고, 다시 여시며, 공급하시고, 죽음을 지나 생명을 주시며, 외적인 불과 내적인 음성으로 자신을 계시하시고, 한 사람을 통해 또 다른 사람을 세우십니다.</p>
+  <p class="reveal">결국 하나님께서 이루시려는 것은 한 시대의 회복이 아니라, 그분 자신을 담고 이어가는 사람들 — 하나님의 생명을 받아 그분과 연합된 사람 — 을 얻으시는 것입니다. 비가 내리는 땅보다 더 중요한 것은, 하나님과 연결된 사람이며, 불이 내리는 제단보다 더 깊은 것은, 하나님과 교통하는 내면입니다.</p>
+  <p class="reveal">이 이야기의 끝에서 조용히 드러나는 사실은 이것입니다. 하나님은 환경을 바꾸시는 분이시지만, 궁극적으로는 사람을 변화시키셔서 그분의 생명과 목적을 담게 하시려는 분이십니다. 그리고 그 목적은 단순한 회복이 아니라, <strong>하나님과 사람이 하나의 흐름 안에서 함께 움직이는</strong> — 그분의 경륜 안에 참여하는 — 그러한 사람들을 얻으시는 데 있습니다.</p>
+</section>
+
+</main>
+
+<div class="colophon">
+  <p>열왕기상 성경공부 시리즈 · 17장 – 19장</p>
+</div>
+
+<script>
+(function(){
+  function getCSS(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+  var ACCENTS = {
+    'dust-amber':   getCSS('--dust-amber'),
+    'ember':        getCSS('--ember'),
+    'rain-teal':    getCSS('--rain-teal'),
+    'twilight':     getCSS('--twilight'),
+    'remnant-green':getCSS('--remnant-green')
+  };
+
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.beat'));
+  var total = sections.length;
+  var flowFill  = document.getElementById('flowFill');
+  var flowLabel = document.getElementById('flowLabel');
+  var flowNum   = document.getElementById('flowNum');
+  var topbarFill = document.getElementById('topbarFill');
+
+  function setActive(i){
+    var sec = sections[i];
+    var accentVar = ACCENTS[sec.dataset.accent] || ACCENTS['dust-amber'];
+    document.documentElement.style.setProperty('--accent', accentVar);
+    var pct = ((i+1)/total)*100;
+    flowFill.style.height = pct + '%';
+    flowLabel.textContent = sec.dataset.label;
+    flowNum.textContent = String(i+1).padStart(2,'0') + '/' + String(total).padStart(2,'0');
+  }
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){ entry.target.classList.add('in'); }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  var sectionIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){
+        var i = sections.indexOf(entry.target);
+        setActive(i);
+      }
+    });
+  }, {threshold:0, rootMargin:'-45% 0px -45% 0px'});
+  sections.forEach(function(s){ sectionIO.observe(s); });
+
+  setActive(0);
+
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement;
+    var scrolled = h.scrollTop;
+    var height = h.scrollHeight - h.clientHeight;
+    var pct = height > 0 ? (scrolled/height)*100 : 0;
+    topbarFill.style.width = pct + '%';
+  }, {passive:true});
+
+  /* ---------- Hero canvas ---------- */
+  var canvas = document.getElementById('heroCanvas');
+  var ctx = canvas.getContext('2d');
+  var w,h,dpr;
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio||1, 2);
+    w = canvas.clientWidth = canvas.parentElement.clientWidth;
+    h = canvas.clientHeight = canvas.parentElement.clientHeight;
+    canvas.width = w*dpr; canvas.height = h*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var particles = [];
+  var n = 40;
+  for (var i=0;i<n;i++){
+    particles.push({
+      x: Math.random()*w,
+      y: h + Math.random()*h,
+      r: 0.6 + Math.random()*1.7,
+      speed: 0.14 + Math.random()*0.3,
+      drift: (Math.random()-0.5)*0.22,
+      alpha: 0.08 + Math.random()*0.17
+    });
+  }
+
+  function drawGrid(){
+    ctx.save();
+    ctx.strokeStyle = 'rgba(28,38,36,0.05)';
+    ctx.lineWidth = 1;
+    var rows = 7;
+    for (var r=1;r<rows;r++){
+      var y = (h/rows)*r;
+      ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function frame(){
+    ctx.clearRect(0,0,w,h);
+    var grad = ctx.createLinearGradient(0,0,0,h);
+    grad.addColorStop(0, '#eef4f4');
+    grad.addColorStop(1, '#e0ecea');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0,0,w,h);
+    drawGrid();
+    particles.forEach(function(p){
+      p.y -= p.speed;
+      p.x += p.drift;
+      if (p.y < -10){ p.y = h + 10; p.x = Math.random()*w; }
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(193,133,74,'+p.alpha+')';
+      ctx.fill();
+    });
+    if (!reduceMotion){ requestAnimationFrame(frame); }
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
+</body>
+</html>
