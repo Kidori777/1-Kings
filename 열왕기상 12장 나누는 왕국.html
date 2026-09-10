@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>열왕기상 12장 — 나뉘는 왕국, 지켜지는 언약</title>
+<meta name="description" content="열왕기상 12장 성경공부: 르호보암과 여로보암, 왕국의 분열과 그 가운데 지켜지는 다윗의 언약, 그리스도를 향한 하나님의 경륜">
+<meta property="og:title" content="열왕기상 12장 — 나뉘는 왕국, 지켜지는 언약">
+<meta property="og:description" content="르호보암의 선택, 여로보암의 두려움, 그리고 그 모든 것을 통해 이루어지는 하나님의 경륜을 따라가는 성경공부">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F7FC;
+    --bg-alt:#EAEFFA;
+    --panel:#FFFFFF;
+    --ink:#141A33;
+    --ink-soft:#4B5474;
+    --ink-faint:#7B84A0;
+    --gold:#C79A3E;
+    --gold-light:#E8C77A;
+    --gold-glow:#F6E3AE;
+    --indigo:#4448C4;
+    --indigo-light:#8285E0;
+    --indigo-faint:#C9CBF3;
+    --rule:#D8DEEF;
+    --shadow: 0 20px 60px -30px rgba(20,26,51,0.25);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Noto Sans KR', sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--gold-glow); color:var(--ink); }
+
+  .wrap{ max-width:760px; margin:0 auto; padding:0 28px; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 50% 20%, #FDFCF7 0%, var(--bg) 55%);
+    padding:100px 24px 60px;
+  }
+  #heroCanvas{
+    position:absolute; inset:0; width:100%; height:100%;
+    opacity:0.9;
+  }
+  .hero-inner{ position:relative; z-index:2; }
+  .hero-eyebrow{
+    font-size:14px;
+    letter-spacing:0.02em;
+    color:var(--ink-faint);
+    margin-bottom:18px;
+    font-weight:500;
+  }
+  .hero h1{
+    font-family:'Noto Serif KR', serif;
+    font-weight:700;
+    font-size:clamp(34px, 6vw, 56px);
+    line-height:1.28;
+    margin:0 0 22px;
+    color:var(--ink);
+  }
+  .hero h1 .split{
+    display:inline-block;
+    background:linear-gradient(92deg, var(--indigo) 0%, var(--indigo) 42%, var(--gold) 58%, var(--gold) 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero p.lede{
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:480px;
+    margin:0 auto;
+  }
+  .hero-verse{
+    margin-top:44px;
+    font-family:'Noto Serif KR', serif;
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:440px;
+    margin-left:auto; margin-right:auto;
+  }
+  .hero-verse cite{ display:block; font-style:normal; font-size:13px; color:var(--ink-faint); margin-top:10px; }
+  .scroll-cue{
+    position:absolute; bottom:34px; left:50%; transform:translateX(-50%);
+    font-size:12px; color:var(--ink-faint); letter-spacing:0.04em;
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    z-index:2;
+  }
+  .scroll-cue .line{ width:1px; height:34px; background:linear-gradient(var(--ink-faint), transparent); animation:pulse 2.2s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{opacity:0.25;} 50%{opacity:0.9;} }
+
+  /* ---------- SECTIONS ---------- */
+  main{ padding:20px 0 40px; }
+
+  section.beat{
+    position:relative;
+    margin:0 auto 4px;
+    max-width:760px;
+    padding:52px 32px 52px 40px;
+    border-left:3px solid var(--rule);
+  }
+  section.beat.tone-gold{ border-left-color:var(--gold); }
+  section.beat.tone-indigo{ border-left-color:var(--indigo); }
+  section.beat::before{
+    content:'';
+    position:absolute; left:-6px; top:58px;
+    width:9px; height:9px; border-radius:50%;
+    background:var(--rule);
+  }
+  section.beat.tone-gold::before{ background:var(--gold); box-shadow:0 0 0 4px var(--gold-glow); }
+  section.beat.tone-indigo::before{ background:var(--indigo); box-shadow:0 0 0 4px var(--indigo-faint); }
+
+  .ref{
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.02em;
+    color:var(--ink-faint);
+    margin-bottom:10px;
+  }
+  .tone-gold .ref{ color:var(--gold); }
+  .tone-indigo .ref{ color:var(--indigo); }
+
+  h2{
+    font-family:'Noto Serif KR', serif;
+    font-weight:600;
+    font-size:clamp(22px, 3.4vw, 27px);
+    line-height:1.4;
+    margin:0 0 20px;
+    color:var(--ink);
+  }
+
+  blockquote{
+    margin:22px 0;
+    padding:22px 26px;
+    background:var(--panel);
+    border-radius:2px;
+    box-shadow:var(--shadow);
+    font-family:'Noto Serif KR', serif;
+    font-size:18px;
+    line-height:1.85;
+    color:var(--ink);
+  }
+  blockquote cite{
+    display:block;
+    margin-top:12px;
+    font-style:normal;
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:13px;
+    font-weight:500;
+    color:var(--ink-faint);
+  }
+  .tone-gold blockquote{ border-top:3px solid var(--gold); }
+  .tone-indigo blockquote{ border-top:3px solid var(--indigo); }
+
+  p{ margin:0 0 18px; color:var(--ink-soft); font-size:16px; }
+  p:last-child{ margin-bottom:0; }
+  p strong{ color:var(--ink); font-weight:600; }
+
+  /* ---------- FORK PANEL ---------- */
+  .fork{
+    max-width:760px; margin:60px auto; padding:0 28px;
+  }
+  .fork-head{ text-align:center; margin-bottom:28px; }
+  .fork-head .ref{ text-align:center; }
+  .fork-head h2{ text-align:center; }
+  .fork-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--rule);
+    border-radius:4px; overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .fork-col{ background:var(--panel); padding:32px 28px; }
+  .fork-col h3{
+    font-family:'Noto Serif KR', serif;
+    font-size:18px; font-weight:600; margin:0 0 6px;
+  }
+  .fork-col .fork-label{ font-size:12px; font-weight:600; letter-spacing:0.02em; margin-bottom:14px; display:block; }
+  .fork-col.gold .fork-label{ color:var(--gold); }
+  .fork-col.indigo .fork-label{ color:var(--indigo); }
+  .fork-col p{ font-size:15px; margin-bottom:14px; }
+  .fork-col blockquote{ box-shadow:none; padding:16px 18px; font-size:15.5px; margin:0; }
+  .fork-col.gold blockquote{ border-top:2px solid var(--gold); }
+  .fork-col.indigo blockquote{ border-top:2px solid var(--indigo); }
+  @media (max-width:640px){
+    .fork-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- DIVISION MARK ---------- */
+  .divide-mark{
+    max-width:760px; margin:20px auto 20px; padding:0 28px;
+    display:flex; align-items:center; gap:16px;
+  }
+  .divide-mark .bar{ flex:1; height:1px; }
+  .divide-mark .bar.g{ background:linear-gradient(90deg, transparent, var(--gold)); }
+  .divide-mark .bar.i{ background:linear-gradient(90deg, var(--indigo), transparent); }
+  .divide-mark span{ font-size:12px; color:var(--ink-faint); font-weight:500; white-space:nowrap; }
+
+  /* ---------- CLOSING ---------- */
+  .closing{
+    position:relative;
+    margin-top:70px;
+    padding:96px 28px 110px;
+    background:
+      radial-gradient(ellipse at 50% 0%, #FBF6E6 0%, var(--bg-alt) 60%);
+    overflow:hidden;
+  }
+  .closing::before{
+    content:'';
+    position:absolute; left:50%; top:-2px; transform:translateX(-50%);
+    width:1px; height:70px;
+    background:linear-gradient(var(--indigo-faint), var(--gold));
+  }
+  .closing-inner{ max-width:640px; margin:0 auto; text-align:center; position:relative; z-index:2; }
+  .closing .glow-dot{
+    width:10px; height:10px; border-radius:50%;
+    background:var(--gold);
+    margin:0 auto 26px;
+    box-shadow:0 0 0 8px var(--gold-glow), 0 0 40px 10px rgba(199,154,62,0.35);
+  }
+  .closing h2{
+    text-align:center;
+    font-size:clamp(24px, 4vw, 32px);
+  }
+  .closing p{ text-align:center; font-size:16.5px; }
+  .closing blockquote{ text-align:left; }
+
+  footer{
+    text-align:center;
+    padding:40px 24px 60px;
+    font-size:12.5px;
+    color:var(--ink-faint);
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    .scroll-cue .line{ animation:none; }
+    html{ scroll-behavior:auto; }
+  }
+
+  @media (max-width:640px){
+    section.beat{ padding:40px 20px 40px 26px; }
+    .fork{ margin:44px auto; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">열왕기상 12장</div>
+    <h1>나뉘는 왕국,<br><span class="split">지켜지는 언약</span></h1>
+    <p class="lede">사람의 선택은 왕국을 갈라놓지만, 하나님의 경륜은 그 갈라진 틈 사이로도 흔들림 없이 흘러갑니다.</p>
+    <div class="hero-verse">
+      “르호보암이 세겜으로 갔으니, 이는 온 이스라엘이 그를 왕으로 삼고자 하여 세겜에 이르렀음이더라.”
+      <cite>열왕기상 12:1</cite>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="line"></span>SCROLL</div>
+</section>
+
+<main>
+  <div class="wrap">
+    <p class="reveal" style="font-size:17px; color:var(--ink-soft); margin-bottom:0; padding-top:8px;">
+      세겜으로 올라가는 이 장면은 단순한 즉위의 시작이 아니라, 하나님과 그분의 백성 사이의 관계가 드러나는 자리입니다. 아브라함이 처음 제단을 쌓았던 그 땅, 언약이 확인되던 그 장소에서 왕이 세워진다는 것은, 하나님께서 왕권 자체를 시험하신다는 의미를 품고 있습니다.
+    </p>
+  </div>
+
+  <section class="beat tone-indigo reveal">
+    <div class="wrap">
+      <div class="ref">12:1–5</div>
+      <h2>백성의 요청, 무거운 멍에</h2>
+      <blockquote>
+        “왕의 부친이 우리에게 메운 멍에를 이제 가볍게 하소서… 그리하시면 우리가 왕을 섬기겠나이다.”
+        <cite>열왕기상 12:4</cite>
+      </blockquote>
+      <p>이 요청은 단순한 부담 완화의 요구가 아니라, 하나님께서 애굽에서 그들을 이끌어 내실 때 이루신 ‘해방’의 원칙과 연결됩니다. 하나님은 무거운 멍에에서 건져내시는 분이신데, 이제 그분의 백성 가운데 다시 무거운 멍에가 자리 잡고 있습니다. 이것은 왕국이 이미 하나님이 의도하신 방향에서 벗어나고 있음을 보여줍니다.</p>
+    </div>
+  </section>
+
+  <section class="beat tone-gold reveal">
+    <div class="wrap">
+      <div class="ref">12:6–7</div>
+      <h2>장로들의 조언, 섬김의 원리</h2>
+      <blockquote>
+        “왕이 만일 오늘 이 백성의 종이 되어 섬기고… 선한 말로 대답하시면 그들이 영원히 왕의 종이 되리이다.”
+        <cite>열왕기상 12:7</cite>
+      </blockquote>
+      <p>여기에는 하나님의 왕국의 원리가 담겨 있습니다. 하나님께서 원하시는 통치는 억압이 아니라 생명의 공급이며, 다스림은 섬김 안에서 완성됩니다. 이것은 장차 오실 그리스도의 통치를 예표합니다. 참된 왕은 높아짐으로 사람을 얻지 않고, 낮아짐으로 사람을 얻습니다.</p>
+    </div>
+  </section>
+
+  <div class="fork reveal">
+    <div class="fork-head">
+      <div class="ref">두 갈래 길</div>
+      <h2>섬김의 길과 지배의 길</h2>
+    </div>
+    <div class="fork-grid">
+      <div class="fork-col gold">
+        <span class="fork-label">장로들이 권한 길</span>
+        <h3>낮아짐으로 얻는 통치</h3>
+        <p>백성의 종이 되어 섬기는 것이 영원한 다스림의 길이라는 조언. 그리스도의 통치를 예표합니다.</p>
+      </div>
+      <div class="fork-col indigo">
+        <span class="fork-label">젊은 자들이 권한 길</span>
+        <h3>두려움에서 나온 지배</h3>
+        <blockquote>
+          “내 새끼손가락이 내 아버지의 허리보다 굵으니… 나는 전갈 채찍으로 너희를 징치하리라.”
+          <cite>열왕기상 12:10–11</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <section class="beat tone-indigo reveal">
+    <div class="wrap">
+      <div class="ref">12:8–11</div>
+      <h2>르호보암의 선택</h2>
+      <p>이 말은 단순한 강경 발언이 아니라, 하나님과 분리된 인간 통치의 본질을 드러냅니다. 사람은 스스로를 지키기 위해 더 강한 통제를 선택합니다. 그러나 그것은 생명에서 나온 다스림이 아니라 두려움에서 나온 지배입니다.</p>
+    </div>
+  </section>
+
+  <section class="beat tone-gold reveal">
+    <div class="wrap">
+      <div class="ref">12:12–15</div>
+      <h2>여호와께로 말미암은 일</h2>
+      <blockquote>
+        “왕이 이같이 백성의 말을 듣지 아니하였으니 이 일은 여호와께로 말미암아 난 것이라…”
+        <cite>열왕기상 12:15</cite>
+      </blockquote>
+      <p>여기서 하나님의 경륜의 깊은 흐름이 드러납니다. 사람은 자신의 선택을 따라 움직이지만, 하나님은 그 모든 과정을 통해 그분의 말씀을 이루십니다. 이미 선지자 아히야를 통하여 예고하신 대로 왕국은 나뉘게 됩니다. 사람의 어리석음조차 하나님의 경륜 안에서는 사용됩니다.</p>
+    </div>
+  </section>
+
+  <div class="divide-mark reveal">
+    <span class="bar g"></span>
+    <span>왕국이 둘로 나뉘다</span>
+    <span class="bar i"></span>
+  </div>
+
+  <section class="beat tone-indigo reveal">
+    <div class="wrap">
+      <div class="ref">12:16</div>
+      <h2>이스라엘의 선언</h2>
+      <blockquote>
+        “우리가 다윗과 무슨 관계가 있느냐… 이스라엘아 이제 네 장막으로 돌아가라.”
+        <cite>열왕기상 12:16</cite>
+      </blockquote>
+      <p>이 말은 단순한 정치적 반역이 아니라, 하나님께서 세우신 ‘다윗의 집’—곧 장차 그리스도를 통해 완성될 왕권—에서 떠나는 것을 의미합니다. 그 순간 하나였던 백성은 둘로 나뉩니다.</p>
+    </div>
+  </section>
+
+  <section class="beat tone-gold reveal">
+    <div class="wrap">
+      <div class="ref">12:21–24</div>
+      <h2>올라가지 말라</h2>
+      <blockquote>
+        “너희는 올라가지 말라… 이 일이 내게로 말미암아 난 것이라.”
+        <cite>열왕기상 12:24</cite>
+      </blockquote>
+      <p>르호보암은 전쟁을 준비하지만, 하나님께서 말씀하십니다. 이 말씀은 놀랍습니다. 분열조차 하나님께서 허락하신 일이라는 것입니다. 하나님은 외적인 통일보다 더 깊은 목적을 가지십니다. 참된 하나됨은 조직이나 구조에서 나오는 것이 아니라, 하나님 자신 안에서만 가능합니다.</p>
+    </div>
+  </section>
+
+  <section class="beat tone-indigo reveal">
+    <div class="wrap">
+      <div class="ref">12:25–28</div>
+      <h2>여로보암의 두려움</h2>
+      <blockquote>
+        “이 나라가 이제 다윗의 집으로 돌아가리로다.”
+        <cite>열왕기상 12:26</cite>
+      </blockquote>
+      <p>이 두려움은 하나님을 신뢰하지 않는 통치의 특징입니다. 그래서 그는 결정을 내립니다.</p>
+      <blockquote>
+        “이에 계획하고 두 금송아지를 만들고…”
+        <cite>열왕기상 12:28</cite>
+      </blockquote>
+      <p>그리고 말합니다.</p>
+      <blockquote>
+        “이스라엘아 이는 너희를 애굽 땅에서 인도하여 올린 너희의 신들이라.”
+        <cite>열왕기상 12:28</cite>
+      </blockquote>
+      <p>이 장면은 출애굽기의 금송아지를 반복합니다. 하나님을 완전히 부인하지는 않지만, 하나님을 ‘대체’합니다. 이것이 종교의 본질입니다. 하나님 없이도 하나님을 섬기는 것처럼 보이게 만드는 체계입니다.</p>
+    </div>
+  </section>
+
+  <section class="beat tone-indigo reveal">
+    <div class="wrap">
+      <div class="ref">12:31–33</div>
+      <h2>바뀐 제사장, 바뀐 절기</h2>
+      <p>그는 더 나아가 제사장도 바꾸고, 절기도 바꿉니다.</p>
+      <blockquote>
+        “자기 마음대로 정한 달 곧 여덟째 달 열다섯째 날로 절기를 정하고…”
+        <cite>열왕기상 12:33</cite>
+      </blockquote>
+      <p>여기서 하나님의 경륜과 인간 종교의 갈림길이 분명해집니다. 하나님은 그분의 방법, 그분의 선택하신 장소, 그분의 계시에 따라 경배받기를 원하십니다. 그러나 사람은 자신의 필요와 편의를 따라 하나님을 재구성합니다.</p>
+    </div>
+  </section>
+
+  <div class="wrap reveal" style="padding-top:20px; padding-bottom:20px;">
+    <p>이 장 전체를 따라가다 보면 하나의 흐름이 점점 드러납니다. 하나님께서 세우신 왕국은 생명과 섬김의 원리 위에 있어야 했지만, 사람의 혼이 개입되면서 그것은 무거운 멍에가 되었고, 결국 분열로 이어졌습니다. 그리고 분열 속에서 사람은 하나님을 대체하는 종교 체계를 만들어 냅니다.</p>
+    <p>그러나 하나님은 그 가운데서도 다윗의 집을 보존하십니다. 그것은 단순한 한 왕조의 유지가 아니라, 장차 오실 참된 왕—그리스도—를 위한 길을 지키시는 것입니다.</p>
+  </div>
+</main>
+
+<section class="closing reveal">
+  <div class="closing-inner">
+    <div class="glow-dot"></div>
+    <div class="ref" style="text-align:center; color:var(--gold);">맺는 말</div>
+    <h2>사람의 왕국을 넘어, 하나님 자신의 왕국으로</h2>
+    <p>결국 이 모든 흐름은 하나의 결론으로 모입니다. 사람의 통치는 분열을 낳고, 사람의 지혜는 하나님을 대체하며, 사람의 왕국은 지속될 수 없습니다.</p>
+    <p>하나님께서 이루시려는 것은 사람이 다스리는 왕국이 아니라, 하나님 자신이 사람 안에 들어와 그분의 생명으로 다스리시는 왕국입니다.</p>
+    <p>그 왕국에서는 더 이상 “무거운 멍에”가 아니라 생명의 흐름이 중심이 되고, 두려움이 아니라 하나님과의 연합이 통치의 근거가 됩니다.</p>
+    <p>열왕기상 12장은 겉으로는 분열의 시작이지만, 실제로는 하나님께서 사람의 왕국을 넘어 그분 자신의 왕국을 이루어 가시는 깊은 경륜의 전개입니다.</p>
+    <p style="color:var(--ink); font-weight:500;">그리고 그 경륜은 결국 그리스도 안에서 사람과 하나님이 하나 되어 참된 왕국으로 완성되는 데까지 이르게 됩니다.</p>
+  </div>
+</section>
+
+<footer>열왕기상 성경공부 시리즈 · 12장</footer>
+
+<script>
+(function(){
+  // scroll reveal
+  var items = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('is-visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+    items.forEach(function(el){ obs.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  // hero canvas: scattered points converging to a single point of light
+  var canvas = document.getElementById('heroCanvas');
+  if(!canvas) return;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ctx = canvas.getContext('2d');
+  var W, H, DPR = Math.min(window.devicePixelRatio || 1, 2);
+
+  function resize(){
+    W = canvas.clientWidth; H = canvas.clientHeight;
+    canvas.width = W * DPR; canvas.height = H * DPR;
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  var target = { x: 0, y: 0 };
+  function setTarget(){ target.x = W * 0.5; target.y = H * 0.42; }
+  setTarget();
+
+  var N = 46;
+  var pts = [];
+  var goldCount = 18;
+  for(var i=0;i<N;i++){
+    var angle = Math.random()*Math.PI*2;
+    var dist = 140 + Math.random()*Math.min(W,H)*0.42;
+    pts.push({
+      x: target.x + Math.cos(angle)*dist,
+      y: target.y + Math.sin(angle)*dist,
+      startX: target.x + Math.cos(angle)*dist,
+      startY: target.y + Math.sin(angle)*dist,
+      r: 1.1 + Math.random()*1.6,
+      gold: i < goldCount,
+      wobble: Math.random()*Math.PI*2,
+      speed: 0.4 + Math.random()*0.5
+    });
+  }
+
+  var start = null;
+  var CONVERGE_MS = 3200;
+
+  function draw(ts){
+    if(!start) start = ts;
+    var t = Math.min((ts - start) / CONVERGE_MS, 1);
+    var ease = 1 - Math.pow(1 - t, 3);
+
+    ctx.clearRect(0,0,W,H);
+
+    for(var i=0;i<pts.length;i++){
+      var p = pts[i];
+      var cx = p.startX + (target.x - p.startX) * ease;
+      var cy = p.startY + (target.y - p.startY) * ease;
+
+      if(t >= 1){
+        var wob = Math.sin(ts*0.0005*p.speed + p.wobble) * 10;
+        cx = target.x + wob * Math.cos(p.wobble);
+        cy = target.y + wob * Math.sin(p.wobble) * 0.6;
+      }
+
+      ctx.beginPath();
+      ctx.arc(cx, cy, p.r, 0, Math.PI*2);
+      ctx.fillStyle = p.gold ? 'rgba(199,154,62,' + (0.55) + ')' : 'rgba(68,72,196,' + (0.35) + ')';
+      ctx.fill();
+    }
+
+    // central glow
+    var glowR = 3 + ease * 5;
+    var grad = ctx.createRadialGradient(target.x, target.y, 0, target.x, target.y, glowR*7);
+    grad.addColorStop(0, 'rgba(246,227,174,' + (0.55*ease) + ')');
+    grad.addColorStop(1, 'rgba(246,227,174,0)');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.arc(target.x, target.y, glowR*7, 0, Math.PI*2);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(target.x, target.y, glowR, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(199,154,62,' + (0.5 + 0.4*ease) + ')';
+    ctx.fill();
+
+    if(t < 1 || !reduceMotion){
+      requestAnimationFrame(draw);
+    }
+  }
+
+  if(reduceMotion){
+    // draw final converged state once, no animation
+    start = -CONVERGE_MS;
+    draw(0);
+  } else {
+    requestAnimationFrame(draw);
+  }
+})();
+</script>
+
+</body>
+</html>
