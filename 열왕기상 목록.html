@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>열왕기상 — 흩어짐 속의 신실하심</title>
+<meta name="description" content="열왕기상 성경공부 시리즈 전체 목록. 솔로몬의 지혜에서 왕국의 분열, 엘리야의 사역까지 아홉 편의 이야기.">
+<meta property="og:title" content="열왕기상 — 흩어짐 속의 신실하심">
+<meta property="og:description" content="열왕기상 성경공부 시리즈 전체 목록. 솔로몬의 지혜에서 왕국의 분열, 엘리야의 사역까지 아홉 편의 이야기.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FAF7EF;
+    --bg-alt: #F1EBDA;
+    --ink: #1D1A12;
+    --ink-soft: #4A4536;
+    --gold: #B08628;
+    --gold-bright: #D6A73B;
+    --blue: #1F3C5C;
+    --line: #DCD3B8;
+    --card: #FFFDF6;
+  }
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Sans KR', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a{ color: inherit; text-decoration: none; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position: relative;
+    padding: 7.5rem 1.5rem 6rem;
+    text-align: center;
+    overflow: hidden;
+    background:
+      radial-gradient(60% 80% at 50% -10%, rgba(214,167,59,0.16), transparent 70%),
+      var(--bg);
+  }
+  .hero-rays{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-kicker{
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    color: var(--gold);
+    margin-bottom: 1.1rem;
+    position: relative;
+  }
+  .hero h1{
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    margin: 0 0 1.1rem;
+    letter-spacing: -0.01em;
+    position: relative;
+  }
+  .hero p.lede{
+    max-width: 34rem;
+    margin: 0 auto;
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    font-weight: 300;
+    position: relative;
+  }
+  .hero-divider{
+    width: 3px;
+    height: 3.4rem;
+    margin: 2.6rem auto 0;
+    background: linear-gradient(to bottom, var(--gold-bright), transparent);
+    position: relative;
+  }
+
+  /* ---------- List section ---------- */
+  .list-wrap{
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 8rem;
+  }
+  .spine{
+    position: relative;
+    padding-left: 5.2rem;
+  }
+  .spine::before{
+    content:"";
+    position:absolute;
+    left: 2.55rem;
+    top: 0.6rem;
+    bottom: 0.6rem;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--line), var(--gold), var(--line));
+  }
+
+  .episode{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 1.1rem;
+  }
+  .episode-link{
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1.6rem 1.8rem 1.7rem;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .episode-link:hover, .episode-link:focus-visible{
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px -14px rgba(31,60,92,0.28);
+    outline: none;
+  }
+  .episode-link:focus-visible{
+    box-shadow: 0 0 0 3px rgba(31,60,92,0.35);
+  }
+  .range-marker{
+    position: absolute;
+    left: -5.2rem;
+    top: 1.55rem;
+    width: 3.6rem;
+    text-align: right;
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--blue);
+  }
+  .range-marker::after{
+    content:"";
+    position: absolute;
+    right: -1.05rem;
+    top: 0.42rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--gold-bright);
+    box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--line);
+  }
+  .episode-title{
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 600;
+    font-size: 1.32rem;
+    margin: 0 0 0.5rem;
+    color: var(--ink);
+  }
+  .episode-desc{
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    font-weight: 300;
+    margin: 0;
+  }
+
+  footer{
+    text-align: center;
+    padding: 3rem 1.5rem 4.5rem;
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    font-weight: 300;
+  }
+
+  @media (max-width: 560px){
+    .spine{ padding-left: 3.6rem; }
+    .range-marker{ left: -3.6rem; width: 2.5rem; font-size: 0.95rem; }
+    .range-marker::after{ right: -0.68rem; }
+    .episode-link{ padding: 1.3rem 1.2rem 1.4rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    .episode-link{ transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <svg class="hero-rays" width="0" height="0"></svg>
+  <div class="hero-kicker">열왕기상 성경공부 시리즈</div>
+  <h1>흩어짐 속의<br>신실하심</h1>
+  <p class="lede">
+    솔로몬의 지혜로운 시작에서 왕국의 분열, 그리고 엘리야를 통해 이어지는
+    하나님의 신실하심까지. 아홉 편에 걸쳐 열왕기상을 함께 읽어갑니다.
+  </p>
+  <div class="hero-divider"></div>
+</section>
+
+<section class="list-wrap">
+  <div class="spine">
+
+    <div class="episode">
+      <span class="range-marker">1—2</span>
+      <a class="episode-link" href="열왕기상 1-2장 사람은쇠하고 하나님은세우신다.html">
+        <h2 class="episode-title">사람은 쇠하고 하나님은 세우신다</h2>
+        <p class="episode-desc">다윗의 쇠약해짐과 솔로몬의 즉위. 한 시대가 저물고 다음 왕이 세워지는 자리에서, 사람의 연약함과 하나님의 세우심이 함께 드러납니다.</p>
+      </a>
+    </div>
+
+    <div class="episode">
+      <span class="range-marker">3—4</span>
+      <a class="episode-link" href="열왕기상 3-4장 솔로몬의 지혜.html">
+        <h2 class="episode-title">솔로몬의 지혜</h2>
+        <p class="episode-desc">일천 번제와 지혜를 구하는 기도, 두 창녀의 재판, 그리고 안정된 왕국의 번영. 참된 지혜가 어디서 비롯되는지를 보여줍니다.</p>
+      </a>
+    </div>
+
+    <div class="episode">
+      <span class="range-marker">5—8</span>
+      <a class="episode-link" href="열왕기상 5-8장 여호와의 집.html">
+        <h2 class="episode-title">여호와의 집</h2>
+        <p class="episode-desc">히람과의 동맹, 출애굽 후 사백팔십 년 만의 성전 건축, 언약궤 봉안과 임재하신 영광의 구름, 솔로몬의 봉헌 기도까지.</p>
+      </a>
+    </div>
+
+    <div class="episode">
+      <span class="range-marker">9—10</span>
+      <a class="episode-link" href="열왕기상 9-10장 완성의 순간.html">
+        <h2 class="episode-title">완성의 순간</h2>
+        <p class="episode-desc">성전 완공 후 다시 나타나신 하나님의 두 번째 말씀, 마음의 조건, 히람에게 준 성읍들, 스바 여왕의 방문, 그리고 부와 영광의 절정.</p>
+      </a>
+    </div>
+
+    <div class="episode">
+      <span class="range-marker">11</span>
+      <a class="episode-link" href="열왕기상 11장 꺼지지 않는 등불.html">
+        <h2 class="episode-title">꺼지지 않는 등불</h2>
+        <p class="episode-desc">이방 여인들을 향한 솔로몬의 사랑과 나뉘어진 마음, 우상숭배와 하나님의 진노, 왕국 분열의 선언. 그러나 다윗을 향한 언약은 등불처럼 남습니다.</p>
+      </a>
+    </div>
+
+    <div class="episode">
+      <span class="range-marker">12</span>
+      <a class="episode-link" href="열왕기상 12장 나누는 왕국.html">
+        <h2 class="episode-title">나누는 왕국</h2>
+        <p class="episode-desc">르호보암의 즉위와 백성의 요청, 장로와 젊은 신하들의 엇갈린 조언, 왕국의 분열, 그리고 그 배후에 있는 하나님의 경륜과 여로보암의 금송아지.</p>
+      </a>
+    </div>
+
+    <div class="episode">
+      <span class="range-marker">13—16</span>
+      <a class="episode-link" href="열왕기상 13-16장 무너지지 않는 말씀.html">
+        <h2 class="episode-title">무너지지 않는 말씀</h2>
+        <p class="episode-desc">벧엘 제단에 대한 표징과 심판, 하나님의 사람의 죽음, 여로보암에게 내린 심판, 유다의 쇠퇴와 반복되는 왕들의 죄. 그 가운데 다윗의 기준은 흔들리지 않습니다.</p>
+      </a>
+    </div>
+
+    <div class="episode">
+      <span class="range-marker">17—19</span>
+      <a class="episode-link" href="열왕기상 17-19장 끊이지 않는 공급.html">
+        <h2 class="episode-title">끊이지 않는 공급</h2>
+        <p class="episode-desc">엘리야와 닫힌 하늘, 까마귀의 은밀한 공급, 사르밧 과부의 마르지 않는 가루와 기름, 갈멜산의 불 대결, 그리고 호렙산 세미한 음성 가운데 남은 자 칠천 명.</p>
+      </a>
+    </div>
+
+    <div class="episode">
+      <span class="range-marker">20—22</span>
+      <a class="episode-link" href="열왕기상 20-22장 내가 여호와인줄 알리라.html">
+        <h2 class="episode-title">내가 여호와인줄 알리라</h2>
+        <p class="episode-desc">벤하닷의 사마리아 포위와 작은 무리를 통한 승리, 나봇의 포도원과 이세벨의 음모, 미가야가 본 하늘 보좌, 라못길르앗 전쟁까지. 하나님을 아는 것과 하나 되는 것의 차이가 드러납니다.</p>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>열왕기상 성경공부 시리즈 &middot; 전체 9편</footer>
+
+</body>
+</html>
